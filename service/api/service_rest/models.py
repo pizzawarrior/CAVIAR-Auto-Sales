@@ -9,7 +9,7 @@ class AutomobileVO(models.Model):
 class Technician(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
-    employee_id = models.BigIntegerField()
+    employee_id = models.BigIntegerField(unique=True)
 
 
 class Appointment(models.Model):
@@ -21,7 +21,8 @@ class Appointment(models.Model):
             ('scheduled', 'scheduled'),
             ('arrived', 'arrived'),
             ('in progress', 'in progress'),
-            ('done', 'done')
+            ('finished', 'finished'),
+            ('canceled', 'canceled')
         ),
         default='scheduled'
     )
@@ -31,4 +32,10 @@ class Appointment(models.Model):
         Technician,
         related_name="appointments",
         on_delete=models.CASCADE
+    )
+    automobile = models.ForeignKey(
+        AutomobileVO,
+        related_name="appointments",
+        on_delete=models.CASCADE,
+        null=True
     )
