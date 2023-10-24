@@ -1,8 +1,9 @@
 import React from 'react'
+import { Wrapper } from './style'
 
 const Sales = () => {
   return (
-    <div>Sales</div>
+    <Wrapper>Sales</Wrapper>
   )
 }
 
