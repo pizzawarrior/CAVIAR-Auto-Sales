@@ -1,8 +1,15 @@
 import React from 'react'
+import { Wrapper, InventoryContainer } from './style'
 
 const Inventory = () => {
   return (
-    <div>Inventory</div>
+    <Wrapper>
+        <InventoryContainer>
+            <div id="one"></div>
+            <div id="two"></div>
+            <div id="three"></div>
+        </InventoryContainer>
+    </Wrapper>
   )
 }
 

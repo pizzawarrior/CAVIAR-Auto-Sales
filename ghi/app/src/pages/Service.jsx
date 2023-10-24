@@ -1,8 +1,9 @@
 import React from 'react'
+import { Wrapper } from './style'
 
 const Service = () => {
   return (
-    <div>Service</div>
+    <Wrapper>Service</Wrapper>
   )
 }
 
