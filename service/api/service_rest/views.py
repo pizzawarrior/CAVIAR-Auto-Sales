@@ -13,7 +13,7 @@ class AutoVOEncoder(ModelEncoder):
 
 class TechnicianEncoder(ModelEncoder):
     model = Technician
-    properties = ["first_name", "last_name", "employee_id"]
+    properties = ["first_name", "last_name", "employee_id", "id"]
 
 
 class AppointmentEncoder(ModelEncoder):
@@ -24,3 +24,29 @@ class AppointmentEncoder(ModelEncoder):
         "technician": TechnicianEncoder(),
         "automobile": AutoVOEncoder()
     }
+
+
+@require_http_methods(["GET", "POST"])
+def get_or_create_technician(request):
+    pass
+
+
+def delete_technician(request, id):
+    pass
+
+
+@require_http_methods(["GET", "POST"])
+def get_or_create_appointment(request):
+    pass
+
+
+def delete_appointment(request, id):
+    pass
+
+
+def set_appointment_cancelled(request, id):
+    pass
+
+
+def set_appointment_done(request, id):
+    pass
