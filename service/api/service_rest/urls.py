@@ -13,6 +13,6 @@ urlpatterns = [
     path('appointments/<int:id>/', delete_appointment, name='delete_appointment'),
     path('appointments/<int:id>/cancel/', set_appointment_cancelled,
          name='set_appointment_cancelled'),
-    path('appointments/<int:id>/finished/',
+    path('appointments/<int:id>/finish/',
          set_appointment_done, name='set_appointment_done')
 ]

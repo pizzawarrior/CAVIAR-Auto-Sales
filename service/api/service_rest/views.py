@@ -45,8 +45,14 @@ def get_or_create_technician(request):
 
 
 def delete_technician(request, id):
-    count, _ = Technician.objects.filter(employee_id=id).delete()
-    return JsonResponse({"deleted": count > 0})
+    try:
+        count, _ = Technician.objects.get(employee_id=id).delete()
+        return JsonResponse({"deleted": count > 0})
+    except Technician.DoesNotExist:
+        return JsonResponse(
+            {"message": "Invalid technician"},
+            status=400,
+        )
 
 
 @require_http_methods(["GET", "POST"])
@@ -73,22 +79,27 @@ def get_or_create_appointment(request):
         auto_vin = content["vin"]
         automobile = AutomobileVO.objects.filter(vin=auto_vin)
 
-        if len(automobile) > 0 :
+        if len(automobile) > 0:
             content["automobile"] = automobile[0]
-
 
         appointment = Appointment.objects.create(**content)
 
         return JsonResponse(
             appointment,
             encoder=AppointmentEncoder,
-            safe=False
+            safe=False,
         )
 
 
 def delete_appointment(request, id):
-    count, _ = Appointment.objects.filter(id=id).delete()
-    return JsonResponse({"deleted": count > 0})
+    try:
+        count, _ = Appointment.objects.get(id=id).delete()
+        return JsonResponse({"deleted": count > 0})
+    except Appointment.DoesNotExist:
+        return JsonResponse(
+            {"message": "Invalid appointment"},
+            status=400,
+        )
 
 
 def set_appointment_cancelled(request, id):
@@ -103,9 +114,9 @@ def set_appointment_cancelled(request, id):
 
     except Appointment.DoesNotExist:
         return JsonResponse(
-                {"message": "Invalid appointment"},
-                status=400,
-            )
+            {"message": "Invalid appointment"},
+            status=400,
+        )
 
 
 def set_appointment_done(request, id):
@@ -120,6 +131,6 @@ def set_appointment_done(request, id):
 
     except Appointment.DoesNotExist:
         return JsonResponse(
-                {"message": "Invalid appointment"},
-                status=400,
-            )
+            {"message": "Invalid appointment"},
+            status=400,
+        )
