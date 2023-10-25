@@ -1,11 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Inventory from './pages/Inventory';
-import Sales from './pages/Sales';
-import Service from './pages/Service';
+import Nav from './components/Nav/Nav'
+import Inventory from './pages/Inventory/Inventory';
+import Sales from './pages/Sales/Sales';
+import Service from './pages/Service/Service';
 
 function App() {
   return (
     <BrowserRouter>
+    <Nav />
         <Routes>
           <Route path="/" element={<Inventory />} />
           <Route path="/sales" element={<Sales />} />
