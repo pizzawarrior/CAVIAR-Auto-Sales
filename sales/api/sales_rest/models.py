@@ -2,8 +2,14 @@ from django.db import models
 from django.urls import reverse
 
 class AutomobileVO(models.Model):
+    import_href = models.CharField(max_length=100, null=True)
     vin = models.CharField(max_length=100, unique=True)
     sold = models.BooleanField(null=False)
+    year = models.PositiveSmallIntegerField(null=True)
+    color = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.vin
 
 
 class Salesperson(models.Model):
@@ -27,15 +33,15 @@ class Sale(models.Model):
         on_delete=models.CASCADE
     )
 
-    # def get_api_url(self):
-    #     return reverse("api_automobile", kwargs={"vin": self.vin})
-
-
     salesperson = models.ForeignKey(
         Salesperson,
         related_name="sales",
         on_delete=models.CASCADE
     )
+
+     # def get_api_url(self):
+    #     return reverse("api_automobile", kwargs={"vin": self.vin})
+
 
     customer = models.ForeignKey(
         Customer,
