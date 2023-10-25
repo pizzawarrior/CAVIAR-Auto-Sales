@@ -1,6 +1,6 @@
 import React from 'react';
 import { Wrapper, InventoryContainer } from './style';
-import Button from '../components/Button/Button';
+import Button from '../../components/Button/Button';
 
 const Inventory = () => {
     const handleClick = () => console.log('click');
