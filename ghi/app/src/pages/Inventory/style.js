@@ -15,7 +15,7 @@ export const InventoryContainer = styled.div`
     padding: 40px 32px;
 
     div {
-        border: 3px solid #ff6666;
+        border: 3px solid #5296A5;
         border-radius: 5px;
         background-color: #071013;
         padding: 1em;
