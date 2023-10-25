@@ -12,7 +12,7 @@ def api_list_customers(request):
     if request.method == 'GET':
         customers = Customer.objects.all()
         return JsonResponse(
-            customers,
+            {"customers": customers},
             encoder=CustomerEncoder,
             safe=False
     )
@@ -92,7 +92,7 @@ def api_list_salespeople(request):
     if request.method == 'GET':
         salespeople = Salesperson.objects.all()
         return JsonResponse(
-            salespeople,
+            {"salespeople": salespeople},
             encoder=SalespersonEncoder,
             safe=False
     )
@@ -166,13 +166,9 @@ def api_detail_salespeople(request, id):
             return response
 
 
-# LIST SALES
+# LIST and CREATE SALES
 # lists all sales showing the salesperson's name and employee ID,
 # the customer's name, the automobile VIN, and the price of the sale.
-
-# As of now, all sales that are logged changed the current VIN to the NEWEST ADDED VIN
-# Can't update sales either: KeyError: 'salesperson'
-# and sold is not updating to True
 @require_http_methods(['GET', 'POST'])
 def api_list_sales(request):
     if request.method == 'GET':
@@ -201,7 +197,8 @@ def api_list_sales(request):
 
         except AutomobileVO.DoesNotExist:
             return JsonResponse(
-                {"Error": "Invalid automobile ID"}
+                {"Error": "Invalid automobile ID"},
+                status=404
             )
 
         try:
@@ -228,8 +225,8 @@ def api_list_sales(request):
             response.status_code=404
             return response
 
-        new_sale = Sale.objects.create(**content)
         AutomobileVO.objects.filter(vin=auto_vin).update(sold=True)
+        new_sale = Sale.objects.create(**content)
         return JsonResponse(
             new_sale,
             encoder=SaleEncoder,
@@ -256,8 +253,15 @@ def api_detail_sale(request, id):
             return response
 
     elif request.method == 'DELETE':
-        count, _ = Sale.objects.filter(id=id).delete()
-        return JsonResponse({'deleted': count > 0})
+        try:
+            count, _ = Sale.objects.get(id=id).delete()
+            return JsonResponse({'deleted': count > 0})
+        except Sale.DoesNotExist:
+            return JsonResponse(
+                {"Error": "Record does not exist"},
+                status=400
+            )
+
 
     else: # PUT
         try:

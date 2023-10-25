@@ -4,7 +4,7 @@ from django.urls import reverse
 class AutomobileVO(models.Model):
     import_href = models.CharField(max_length=100, null=True)
     vin = models.CharField(max_length=100, unique=True)
-    sold = models.BooleanField(null=False)
+    sold = models.BooleanField(default=False)
     year = models.PositiveSmallIntegerField(null=True)
     color = models.CharField(max_length=100, null=True)
 
@@ -22,7 +22,7 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
-    phone_number = models.PositiveBigIntegerField()
+    phone_number = models.CharField(max_length=13)
 
 
 class Sale(models.Model):
