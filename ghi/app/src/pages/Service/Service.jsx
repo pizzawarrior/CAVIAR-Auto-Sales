@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper } from './style'
+import { Wrapper } from '../Inventory/style'
 
 const Service = () => {
   return (

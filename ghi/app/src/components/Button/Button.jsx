@@ -1,8 +1,9 @@
 import React from 'react'
+import { ButtonStyle } from './style'
 
-const Button = () => {
+const Button = ({ text, handleClick }) => {
   return (
-    <div>Button</div>
+    <ButtonStyle onClick={() => handleClick()}>{text}</ButtonStyle>
   )
 }
 
