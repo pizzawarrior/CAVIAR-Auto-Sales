@@ -4,6 +4,7 @@ import { Wrapper } from '../Inventory/style';
 import { ServiceContainer } from './style';
 import ServiceTechs from '../../components/ServiceTechs/ServiceTechs';
 import AppointmentList from '../../components/AppointmentList/AppointmentList';
+import AddAppointment from '../../components/AddAppointment/AddAppointment';
 
 const Service = () => {
     const [technicians, setTechnicians] = useState([]);
@@ -41,7 +42,7 @@ const Service = () => {
                 <div
                     className='section'
                     id='three'
-                ></div>
+                ><AddAppointment /></div>
             </ServiceContainer>
         </Wrapper>
     );
