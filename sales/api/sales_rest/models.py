@@ -2,7 +2,6 @@ from django.db import models
 from django.urls import reverse
 
 class AutomobileVO(models.Model):
-    import_href = models.CharField(max_length=100, null=True)
     vin = models.CharField(max_length=100, unique=True)
     sold = models.BooleanField(default=False)
     year = models.PositiveSmallIntegerField(null=True)
