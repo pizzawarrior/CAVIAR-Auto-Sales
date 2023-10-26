@@ -6,19 +6,20 @@ export const Wrapper = styled.div`
     background-color: #fff;
 `;
 
-export const InventoryContainer = styled.div`
-    display: grid;
+export const SalesContainer = styled.div`
+ display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    grid-auto-rows: 42vh;
-    padding: 22px 32px;
+    gap: 8px;
+    grid-auto-rows: 44vh;
+    padding: 11px;
 
-    div {
-        border: 3px solid #5296A5;
+    .section {
+        border: 2px solid #5296A5;
         border-radius: 5px;
         background-color: #071013;
         padding: 1em;
         color: #e86252;
+        overflow-y: scroll;
     }
 
     #one {
@@ -29,9 +30,12 @@ export const InventoryContainer = styled.div`
         grid-column: 2 / 3;
         grid-row: 1 / 2;
     }
-    /* Automobile Inventory LIST */
     #three {
-        grid-column: 1/3;
+        grid-column: 1 / 2;
         grid-row: 2 / 3;
     }
-`;
+    #four {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+`
