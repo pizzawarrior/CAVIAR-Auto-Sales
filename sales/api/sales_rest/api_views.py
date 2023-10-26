@@ -225,7 +225,7 @@ def api_list_sales(request):
             response.status_code=404
             return response
 
-        AutomobileVO.objects.filter(vin=auto_vin).update(sold=True)
+        # AutomobileVO.objects.filter(vin=auto_vin).update(sold=True)
         new_sale = Sale.objects.create(**content)
         return JsonResponse(
             new_sale,

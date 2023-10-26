@@ -1,50 +1,49 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+
 import logo from './assets/caviar-logo.png'
-import { LogoStyle } from "./style";
+import { NavStyle,
+    LeftContainer,
+    RightContainer,
+    NavbarExtendedContainer,
+    NavbarInnerContainer,
+    NavbarLinkContainer,
+    NavbarLink,
+    Logo,
+    OpenLinksBtn,
+    NavbarLinkExtended,
+} from "./style";
 
 
 export default function Nav() {
+    const [extendNavBar, setExtendNavBar] = useState(false);
+
     return (
-       <nav className="navbar">
-        <div className="container-fluid">
-
-            <NavLink className="navbar-brand" to="/">
-                Caviar
-            </NavLink>
-
-            <LogoStyle>
-            <img src={logo} alt="caviar-logo" className="caviar-logo" />
-            </LogoStyle>
-
-            <button
-                className="navbar-btn"
-                type="button"
-                >
-                <span className="navbar-icon"></span>
-            </button>
-
-            <div className="navbar-list">
-                <ul className="navbar-ul">
-                    <li className="nav-item">
-                        <NavLink
-                        className="nav-link"
-                        to="/sales"
-                        >
-                        Sales Department
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink
-                        className="nav-link"
-                        to="/service"
-                        >
-                        Service Department
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
-        </div>
-       </nav>
+        <NavStyle extendNavBar={extendNavBar}>
+            <NavbarInnerContainer>
+                <LeftContainer>
+                    <NavbarLinkContainer>
+                        <NavbarLink to="/">
+                            <Logo src={logo}></Logo>
+                        </NavbarLink>
+                    </NavbarLinkContainer>
+                </LeftContainer>
+                <RightContainer>
+                    <NavbarLink to="/sales">Sales Department</NavbarLink>
+                    <NavbarLink to="/service">Service Department</NavbarLink>
+                    <OpenLinksBtn onClick={() => {
+                        setExtendNavBar((curr) => !curr)
+                    }}
+                    >
+                    {extendNavBar ? <> &#10005; </> : <> &#8801;</>}
+                    </OpenLinksBtn>
+                </RightContainer>
+            </NavbarInnerContainer>
+                {extendNavBar && (
+                    <NavbarExtendedContainer>
+                        <NavbarLinkExtended to="/sales">Sales Department</NavbarLinkExtended>
+                        <NavbarLinkExtended to="/service">Service Department</NavbarLinkExtended>
+                    </NavbarExtendedContainer>
+                )}
+       </NavStyle>
     )
 }
