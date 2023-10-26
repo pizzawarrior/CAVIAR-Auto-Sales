@@ -18,7 +18,7 @@ export default function Nav() {
     const [extendNavBar, setExtendNavBar] = useState(false);
 
     return (
-        <NavStyle extendNavBar={extendNavBar}>
+        <NavStyle className={ extendNavBar ? "full_screen" : "" }>
             <NavbarInnerContainer>
                 <LeftContainer>
                     <NavbarLinkContainer>

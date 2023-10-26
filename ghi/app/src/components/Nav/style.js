@@ -4,13 +4,15 @@ import { NavLink } from "react-router-dom";
 export const NavStyle = styled.nav`
         width: 100%;
 
-        height: ${props => props.extendNavbar ? "100vh" : "80px"};
         background-color: #82DDF0;
         display: flex;
         flex-direction: column;
 
         @media (min-width: 700px) {
             height: 80px;
+            .full_screen {
+                height: 100vh !important
+            }
         }
 
     a {
