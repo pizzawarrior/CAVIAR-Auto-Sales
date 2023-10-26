@@ -30,6 +30,7 @@ export const InventoryContainer = styled.div`
         grid-column: 2 / 3;
         grid-row: 1 / 2;
     }
+    /* Automobile Inventory LIST */
     #three {
         grid-column: 1/3;
         grid-row: 2 / 3;
