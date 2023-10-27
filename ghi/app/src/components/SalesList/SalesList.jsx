@@ -1,6 +1,16 @@
 import React from "react";
+import axios from 'axios'
 
 const SalesList = ({sales, setFilterValue, handleFilter, setFire, salespeople}) => {
+
+  const handleDelete = (id) => {
+    axios
+    .delete(`http://localhost:8090/api/sales/${id}/`)
+    .then(() => setFire(true))
+    .catch(err => console.log(err))
+  }
+
+
   // console.log(salespeople)
   return (
     <div>
@@ -48,10 +58,12 @@ const SalesList = ({sales, setFilterValue, handleFilter, setFire, salespeople}) 
                 <td>{sale.salesperson.first_name} {sale.salesperson.last_name}</td>
                 <td>{sale.automobile.vin}</td>
                 <td>{sale.price}</td>
+                <td><button onClick={() => handleDelete(sale.id)}>Delete</button></td>
               </tr>
             );
           })}
         </tbody>
+
       </table>
     </div>
   );

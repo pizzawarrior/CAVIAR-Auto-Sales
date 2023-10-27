@@ -33,10 +33,11 @@ const Sales = () => {
     // console.log(filterValue)
 
     const handleFilter = () => {
-        const filteredPeople = sales.filter(item => item.salesperson.employee_id === parseInt(filterValue))
-        // console.log(filteredPeople)
-        setSales(filteredPeople)
+        const filteredSale = sales.filter(item => item.salesperson.employee_id === parseInt(filterValue))
+        // console.log(filteredSale)
+        setSales(filteredSale)
     }
+
 
     useEffect(() => {
         axios
@@ -55,7 +56,13 @@ const Sales = () => {
       <SalesContainer>
         <div className='section' id='two'><SalespeopleList salespeople={salespeople}/></div>
         <div className='section' id='one'> <CustomerList customers={customers}/></div>
-        <div className='section' id='three'><SalesList setFire={setFire} handleFilter={handleFilter} sales={sales} setFilterValue={setFilterValue} salespeople={salespeople} filterValue={filterValue}/></div>
+        <div className='section' id='three'><SalesList
+        setFire={setFire}
+        handleFilter={handleFilter}
+        sales={sales} setFilterValue={setFilterValue}
+        salespeople={salespeople} filterValue={filterValue}
+        />
+        </div>
       </SalesContainer>
     </Wrapper>
   )

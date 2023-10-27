@@ -7,21 +7,24 @@ const AddSalespersonForm = () => {
     const [employeeId, setEmployeeId] = useState('')
 
     const handleClick = () => {
-        // e.preventDefault()
-        console.log('click')
+        // console.log('click')
 
         axios
             .post('http://localhost:8090/api/salespeople/', {
                 first_name: firstName,
                 last_name: lastName,
                 employee_id: employeeId,
-            }).then(({data}) => console.log(data))
+            }).then(({data}) => {
+                setFirstName('')
+                setLastName('')
+                setEmployeeId('')
+            })
             .catch(err => console.log(err))
     }
 
   return (
 
-        <form>
+        <div>
             <label>First Name</label>
             <input type="text" onChange={(e) => setFirstName(e.target.value)}
             value={firstName}
@@ -38,7 +41,7 @@ const AddSalespersonForm = () => {
             />
 
             <button onClick={() => handleClick()}>Submit</button>
-        </form>
+        </div>
 
 
   )

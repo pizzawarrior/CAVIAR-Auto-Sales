@@ -7,24 +7,26 @@ const AddCustomerForm = () => {
     const [address, setAddress] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
 
-    const handleClick = (e) => {
-       e.preventDefault()
+    const handleClick = () => {
+
         axios
             .post('http://localhost:8090/api/customers/', {
                 first_name: firstName,
                 last_name: lastName,
                 address: address,
                 phone_number: phoneNumber
-            }).then(({data}) => console.log(data))
+            }).then(({data}) => {
+                setFirstName('')
+                setLastName('')
+                setAddress('')
+                setPhoneNumber('')
+            })
             .catch(err => console.log(err))
-
-
     }
-
 
   return (
 
-        <form>
+        <div>
             <label>First Name</label>
             <input type="text" onChange={(e) => setFirstName(e.target.value)}
             value={firstName}
@@ -46,7 +48,7 @@ const AddCustomerForm = () => {
             />
 
             <button onClick={() => handleClick()}>Submit</button>
-        </form>
+        </div>
 
 
   )
