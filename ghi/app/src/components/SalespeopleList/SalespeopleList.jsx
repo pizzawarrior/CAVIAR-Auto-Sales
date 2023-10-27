@@ -1,6 +1,14 @@
 import React from "react";
+import axios from 'axios'
 
-const SalespeopleList = ({salespeople}) => {
+const SalespeopleList = ({salespeople, setFire}) => {
+  const handleDelete = (id) => {
+    axios
+      .delete(`http://localhost:8090/api/salespeople/${id}/`)
+      .then(() => setFire(true))
+      .catch(err => console.log(err))
+  }
+
   return (
     <div>
       <h1>Salespeople</h1>
@@ -19,6 +27,7 @@ const SalespeopleList = ({salespeople}) => {
                 <td>{salesperson.employee_id}</td>
                 <td>{salesperson.first_name}</td>
                 <td>{salesperson.last_name}</td>
+                <td><button onClick={() => handleDelete(salesperson.id)}>Delete</button></td>
               </tr>
             );
           })}
