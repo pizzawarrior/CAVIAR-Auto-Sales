@@ -20,7 +20,6 @@ Team:
 
 # App Design
 
-## Project Diagram
 ![Alt text](Caviar-Model-Diagram.png)
 
 ## Polling
