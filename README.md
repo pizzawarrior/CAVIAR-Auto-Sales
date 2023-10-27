@@ -2,7 +2,7 @@
 
 About:\
 This project was built using Django for the backend, with a Postgres database. Docker is used for creating a stable environment to deploy the project in. React was used for the front end, along with some help from axios, and styled components.\
-Absolutely NO bootsrap or comparable style libraries were used in the creation of this project.
+:no_entry_sign:	Absolutely NO bootsrap or comparable style libraries were used in the creation of this project.
 
 
 Team:
