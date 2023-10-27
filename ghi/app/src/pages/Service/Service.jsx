@@ -33,7 +33,7 @@ const Service = () => {
                     className='section'
                     id='one'
                 >
-                    <AppointmentList appointments={appointments} />
+                    <AppointmentList setFire={setFire} appointments={appointments} />
                 </div>
                 <div
                     className='section'
