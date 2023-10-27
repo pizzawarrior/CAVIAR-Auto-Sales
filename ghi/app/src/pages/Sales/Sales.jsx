@@ -19,7 +19,7 @@ const Sales = () => {
             .get('http://localhost:8090/api/customers/')
             .then(({ data }) => setCustomers(data.customers))
             .catch((err) => console.log(err));
-    }, []);
+    }, [fire]);
     // console.log(customers)
 
     useEffect(() => {
@@ -28,7 +28,7 @@ const Sales = () => {
             .then(({ data }) => {setSalespeople(data.salespeople)
             })
             .catch((err) => console.log(err));
-    }, []);
+    }, [fire]);
     // console.log(salespeople)
     // console.log(filterValue)
 
@@ -50,12 +50,11 @@ const Sales = () => {
     }, [fire]);
     // console.log(sales)
 
-
   return (
     <Wrapper>
       <SalesContainer>
-        <div className='section' id='two'><SalespeopleList salespeople={salespeople}/></div>
-        <div className='section' id='one'> <CustomerList customers={customers}/></div>
+        <div className='section' id='two'><SalespeopleList salespeople={salespeople} setFire={setFire}/></div>
+        <div className='section' id='one'> <CustomerList customers={customers} setFire={setFire}/></div>
         <div className='section' id='three'><SalesList
         setFire={setFire}
         handleFilter={handleFilter}
