@@ -1,6 +1,6 @@
 import React from "react";
 
-const SalesList = ({sales, setFilterValue, salespeople}) => {
+const SalesList = ({sales, setFilterValue, handleFilter, setFire, salespeople}) => {
   // console.log(salespeople)
   return (
     <div>
@@ -21,14 +21,15 @@ const SalesList = ({sales, setFilterValue, salespeople}) => {
             </option>
             {salespeople.map((salesperson) => {
                 return (
-                    <option key={salesperson.employee_id} value={salesperson.id}>
+                    <option key={salesperson.employee_id} value={salesperson.employee_id}>
                         {salesperson.first_name} {salesperson.last_name}
                     </option>
                 );
             } )}
         </select>
 
-        <button>Clear</button>
+        <button onClick={() => handleFilter()}>Submit</button>
+        <button onClick={() => setFire(true)}>Clear</button>
 
       <table>
         <thead>

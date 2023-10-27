@@ -9,7 +9,8 @@ const Sales = () => {
     const [customers, setCustomers] = useState([])
     const [salespeople, setSalespeople] = useState([])
     const [sales, setSales] = useState([])
-    const [filterValue, setFilterValue] = useState(0)
+    const [filterValue, setFilterValue] = useState('')
+    const [fire, setFire] = useState(false)
 
     console.log(filterValue)
 
@@ -24,25 +25,32 @@ const Sales = () => {
     useEffect(() => {
         axios
             .get('http://localhost:8090/api/salespeople/')
-            .then(({ data }) => setSalespeople(data.salespeople))
+            .then(({ data }) => {setSalespeople(data.salespeople)
+            })
             .catch((err) => console.log(err));
+        if (filterValue) {
+            console.log('filter')
+        }
     }, []);
     // console.log(salespeople)
+    console.log(filterValue)
+
+    const handleFilter = () => {
+        const filteredPeople = sales.filter(item => item.salesperson.employee_id === parseInt(filterValue))
+        // console.log(filteredPeople)
+        setSales(filteredPeople)
+    }
 
     useEffect(() => {
         axios
             .get('http://localhost:8090/api/sales/')
-            .then(({ data }) => setSales(data.sales))
+            .then(({ data }) => {setSales(data.sales)
+            setFire(false)
+            })
             .catch((err) => console.log(err));
-    }, []);
-    // console.log(sales)
 
-    useEffect(() => {
-        if (filterValue !== 0) {
-            console.log('WORKING.')
-        }
-    }, []);
-    // console.log(sales)
+    }, [fire]);
+    console.log(sales)
 
 
   return (
@@ -50,7 +58,7 @@ const Sales = () => {
       <SalesContainer>
         <div className='section' id='two'><SalespeopleList salespeople={salespeople}/></div>
         <div className='section' id='one'> <CustomerList customers={customers}/></div>
-        <div className='section' id='three'><SalesList sales={sales} setFilterValue={setFilterValue} salespeople={salespeople} filterValue={filterValue}/></div>
+        <div className='section' id='three'><SalesList setFire={setFire} handleFilter={handleFilter} sales={sales} setFilterValue={setFilterValue} salespeople={salespeople} filterValue={filterValue}/></div>
       </SalesContainer>
     </Wrapper>
   )
