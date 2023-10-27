@@ -1,8 +1,9 @@
 import React from "react";
+import { Container } from "../Manufacturers/style";
 
 const CustomerList = ({customers}) => {
   return (
-    <div>
+    <Container>
       <h1>Customers</h1>
       <table>
         <thead>
@@ -26,7 +27,7 @@ const CustomerList = ({customers}) => {
           })}
         </tbody>
       </table>
-    </div>
+    </Container>
   );
 };
 

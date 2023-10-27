@@ -1,17 +1,16 @@
 import { useState } from 'react';
 import axios from 'axios';
-import useInput from '../../hooks/useInput';
 import { Container } from '../Manufacturers/style';
 import { VehicleRow } from './style';
 import Button from '../Button/Button';
 import { ButtonStyle } from '../Button/style';
-import { ModalContainer } from '../Modal/style';
+import { ModalContainer } from '../../pages/Inventory/style';
 
 const Vehicles = ({ vehicles, manufacturers, setFire }) => {
     const [showModal, setShowModal] = useState(false);
-    const [manufacturer, setManufacturer] = useState(0);
-    const name = useInput('');
-    const image = useInput('');
+    const [manufacturer, setManufacturer] = useState('');
+    const [name, setName] = useState('');
+    const [image, setImage] = useState('');
 
     const handleSubmit = () => {
         const newModel = {
@@ -24,6 +23,9 @@ const Vehicles = ({ vehicles, manufacturers, setFire }) => {
             .then(({ data }) => {
                 setFire(true);
                 setShowModal(false);
+                setImage('')
+                setName('')
+                setManufacturer('')
             })
             .catch((err) => console.log(err));
     };
@@ -43,13 +45,15 @@ const Vehicles = ({ vehicles, manufacturers, setFire }) => {
                     <input
                         type='text'
                         placeholder='Model Name'
-                        {...name}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                     />
                     <br />
                     <input
                         type='text'
                         placeholder='Model Image'
-                        {...image}
+                        value={image}
+                        onChange={(e) => setImage(e.target.value)}
                     />
                     <br />
                     <select
@@ -68,12 +72,18 @@ const Vehicles = ({ vehicles, manufacturers, setFire }) => {
                             </option>
                         ))}
                     </select>
+                    <div id='buttons'>
                     <ButtonStyle onClick={() => handleSubmit()}>
                         ADD
                     </ButtonStyle>
-                    <ButtonStyle onClick={() => setShowModal(false)}>
+                    <ButtonStyle onClick={() => {
+                        setShowModal(false)
+                        setImage('')
+                        setName('')
+                        }}>
                         CANCEL
                     </ButtonStyle>
+                    </div>
                 </ModalContainer>
             )}
             {vehicles.map((item, index) => (

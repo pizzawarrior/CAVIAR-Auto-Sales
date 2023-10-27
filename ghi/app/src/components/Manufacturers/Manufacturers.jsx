@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import axios from 'axios';
-import useInput from '../../hooks/useInput';
 import { ManufacturerGrid, Container } from './style';
 import Button from '../Button/Button';
 import { ButtonStyle } from '../Button/style';
-import { ModalContainer } from '../Modal/style';
+import { ModalContainer } from '../../pages/Inventory/style';
 
 const Manufacturers = ({ manufacturers, setFire }) => {
     const [showModal, setShowModal] = useState(false);
-    const name = useInput('');
+    const [name, setName] = useState('');
 
     const handleClick = () => {
         axios
@@ -42,7 +41,8 @@ const Manufacturers = ({ manufacturers, setFire }) => {
                     <h1>New Manufacturer</h1>
                     <input
                         type='text'
-                        {...name}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         placeholder='New Manufacturer'
                         required
                     />

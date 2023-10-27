@@ -51,7 +51,7 @@ const Inventory = () => {
                     className='section'
                     id='three'
                 >
-                    <AutoList autos={autos} />
+                    <AutoList autos={autos} models={vehicles} setFire={setFire} />
                 </div>
             </InventoryContainer>
         </Wrapper>

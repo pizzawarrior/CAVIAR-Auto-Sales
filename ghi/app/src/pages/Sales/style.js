@@ -10,16 +10,15 @@ export const SalesContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    /* grid-auto-rows: minmax(40vh, auto); */
     grid-auto-rows: 40vh;
     padding: 40px 32px;
 
-    div {
+    .section {
         border: 3px solid #5296A5;
         border-radius: 5px;
-        background-color: #071013;
+        background-color: #140D4F;
         padding: 1em;
-        color: #e86252;
+        color: #DDDFDF;
     }
 
     #one {
