@@ -20,6 +20,9 @@ Team:
 
 # App Design
 
+## Project Diagram
+![Caviar_Model_Diagram](/uploads/e2783cfbf768e5e6f6e36c1b2c331bdc/Caviar_Model_Diagram.png) 
+
 ## Polling
 Pollers have been built for both microservices. They poll automobile data from the Inventory database every 60 seconds. 
 
