@@ -12,7 +12,7 @@ const Sales = () => {
     const [filterValue, setFilterValue] = useState('')
     const [fire, setFire] = useState(false)
 
-    console.log(filterValue)
+    // console.log(filterValue)
 
     useEffect(() => {
         axios
@@ -28,12 +28,9 @@ const Sales = () => {
             .then(({ data }) => {setSalespeople(data.salespeople)
             })
             .catch((err) => console.log(err));
-        if (filterValue) {
-            console.log('filter')
-        }
     }, []);
     // console.log(salespeople)
-    console.log(filterValue)
+    // console.log(filterValue)
 
     const handleFilter = () => {
         const filteredPeople = sales.filter(item => item.salesperson.employee_id === parseInt(filterValue))
@@ -50,7 +47,7 @@ const Sales = () => {
             .catch((err) => console.log(err));
 
     }, [fire]);
-    console.log(sales)
+    // console.log(sales)
 
 
   return (

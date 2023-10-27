@@ -30,6 +30,7 @@ export default function Nav() {
                 <RightContainer>
                     <NavbarLink to="/sales">Sales Department</NavbarLink>
                     <NavbarLink to="/service">Service Department</NavbarLink>
+                    <NavbarLink to="/sales-form">Add Sales Forms</NavbarLink>
                     <OpenLinksBtn onClick={() => {
                         setExtendNavBar((curr) => !curr)
                     }}
@@ -42,6 +43,7 @@ export default function Nav() {
                     <NavbarExtendedContainer>
                         <NavbarLinkExtended to="/sales">Sales Department</NavbarLinkExtended>
                         <NavbarLinkExtended to="/service">Service Department</NavbarLinkExtended>
+                        <NavbarLinkExtended to="/sales-form">Add Sales Forms</NavbarLinkExtended>
                     </NavbarExtendedContainer>
                 )}
        </NavStyle>
