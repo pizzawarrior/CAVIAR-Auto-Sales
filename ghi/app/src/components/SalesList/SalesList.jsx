@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "../Manufacturers/style";
 import axios from 'axios'
 
 const SalesList = ({sales, setFilterValue, handleFilter, setFire, salespeople}) => {
@@ -13,7 +14,7 @@ const SalesList = ({sales, setFilterValue, handleFilter, setFire, salespeople}) 
 
   // console.log(salespeople)
   return (
-    <div>
+    <Container>
       <h1>Sales Records</h1>
 
         <p>Select A Salesperson From The Dropdown</p>
@@ -65,7 +66,7 @@ const SalesList = ({sales, setFilterValue, handleFilter, setFire, salespeople}) 
         </tbody>
 
       </table>
-    </div>
+    </Container>
   );
 };
 

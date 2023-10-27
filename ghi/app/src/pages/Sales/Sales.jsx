@@ -1,16 +1,16 @@
-import {useEffect, useState} from 'react'
-import { Wrapper, SalesContainer } from './style'
-import CustomerList from '../../components/CustomerList/CustomerList'
-import SalespeopleList from '../../components/SalespeopleList/SalespeopleList'
-import SalesList from '../../components/SalesList/SalesList'
-import axios from 'axios'
+import { useEffect, useState } from 'react';
+import { Wrapper, SalesContainer } from './style';
+import CustomerList from '../../components/CustomerList/CustomerList';
+import SalespeopleList from '../../components/SalespeopleList/SalespeopleList';
+import SalesList from '../../components/SalesList/SalesList';
+import axios from 'axios';
 
 const Sales = () => {
-    const [customers, setCustomers] = useState([])
-    const [salespeople, setSalespeople] = useState([])
-    const [sales, setSales] = useState([])
-    const [filterValue, setFilterValue] = useState('')
-    const [fire, setFire] = useState(false)
+    const [customers, setCustomers] = useState([]);
+    const [salespeople, setSalespeople] = useState([]);
+    const [sales, setSales] = useState([]);
+    const [filterValue, setFilterValue] = useState('');
+    const [fire, setFire] = useState(false);
 
     // console.log(filterValue)
 
@@ -25,7 +25,8 @@ const Sales = () => {
     useEffect(() => {
         axios
             .get('http://localhost:8090/api/salespeople/')
-            .then(({ data }) => {setSalespeople(data.salespeople)
+            .then(({ data }) => {
+                setSalespeople(data.salespeople);
             })
             .catch((err) => console.log(err));
     }, [fire]);
@@ -42,11 +43,11 @@ const Sales = () => {
     useEffect(() => {
         axios
             .get('http://localhost:8090/api/sales/')
-            .then(({ data }) => {setSales(data.sales)
-            setFire(false)
+            .then(({ data }) => {
+                setSales(data.sales);
+                setFire(false);
             })
             .catch((err) => console.log(err));
-
     }, [fire]);
     // console.log(sales)
 
@@ -67,4 +68,4 @@ const Sales = () => {
   )
 }
 
-export default Sales
+export default Sales;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "../Manufacturers/style";
 import axios from 'axios'
 
 const SalespeopleList = ({salespeople, setFire}) => {
@@ -10,7 +11,7 @@ const SalespeopleList = ({salespeople, setFire}) => {
   }
 
   return (
-    <div>
+    <Container>
       <h1>Salespeople</h1>
       <table>
         <thead>
@@ -33,7 +34,7 @@ const SalespeopleList = ({salespeople, setFire}) => {
           })}
         </tbody>
       </table>
-    </div>
+    </Container>
   );
 };
 

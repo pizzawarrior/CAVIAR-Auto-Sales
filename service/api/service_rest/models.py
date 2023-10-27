@@ -13,7 +13,7 @@ class Technician(models.Model):
 
 
 class Appointment(models.Model):
-    date_time = models.DateTimeField(auto_now_add=True)
+    date_time = models.DateTimeField()
     reason = models.TextField()
     status = models.CharField(
         max_length=200,
