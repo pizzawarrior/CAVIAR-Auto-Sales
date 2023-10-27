@@ -19,7 +19,7 @@ const Sales = () => {
             .get('http://localhost:8090/api/customers/')
             .then(({ data }) => setCustomers(data.customers))
             .catch((err) => console.log(err));
-    }, []);
+    }, [fire]);
     // console.log(customers)
 
     useEffect(() => {
@@ -29,17 +29,16 @@ const Sales = () => {
                 setSalespeople(data.salespeople);
             })
             .catch((err) => console.log(err));
-    }, []);
+    }, [fire]);
     // console.log(salespeople)
     // console.log(filterValue)
 
     const handleFilter = () => {
-        const filteredPeople = sales.filter(
-            (item) => item.salesperson.employee_id === parseInt(filterValue)
-        );
-        // console.log(filteredPeople)
-        setSales(filteredPeople);
-    };
+        const filteredSale = sales.filter(item => item.salesperson.employee_id === parseInt(filterValue))
+        // console.log(filteredSale)
+        setSales(filteredSale)
+    }
+
 
     useEffect(() => {
         axios
@@ -52,38 +51,21 @@ const Sales = () => {
     }, [fire]);
     // console.log(sales)
 
-    return (
-        <Wrapper>
-            <SalesContainer>
-                <div
-                    className='section'
-                    id='two'
-                >
-                    <SalespeopleList salespeople={salespeople} />
-                </div>
-                <div
-                    className='section'
-                    id='one'
-                >
-                    {' '}
-                    <CustomerList customers={customers} />
-                </div>
-                <div
-                    className='section'
-                    id='three'
-                >
-                    <SalesList
-                        setFire={setFire}
-                        handleFilter={handleFilter}
-                        sales={sales}
-                        setFilterValue={setFilterValue}
-                        salespeople={salespeople}
-                        filterValue={filterValue}
-                    />
-                </div>
-            </SalesContainer>
-        </Wrapper>
-    );
-};
+  return (
+    <Wrapper>
+      <SalesContainer>
+        <div className='section' id='two'><SalespeopleList salespeople={salespeople} setFire={setFire}/></div>
+        <div className='section' id='one'> <CustomerList customers={customers} setFire={setFire}/></div>
+        <div className='section' id='three'><SalesList
+        setFire={setFire}
+        handleFilter={handleFilter}
+        sales={sales} setFilterValue={setFilterValue}
+        salespeople={salespeople} filterValue={filterValue}
+        />
+        </div>
+      </SalesContainer>
+    </Wrapper>
+  )
+}
 
 export default Sales;
