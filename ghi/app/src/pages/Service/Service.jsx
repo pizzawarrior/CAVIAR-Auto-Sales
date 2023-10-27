@@ -39,7 +39,7 @@ const Service = () => {
                     className='section'
                     id='two'
                 >
-                    <ServiceTechs technicians={technicians} />
+                    <ServiceTechs setFire={setFire} technicians={technicians} />
                 </div>
                 <div
                     className='section'

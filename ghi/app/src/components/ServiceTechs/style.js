@@ -19,4 +19,12 @@ export const TechDetails = styled.div`
     border: 3px solid #5296a5;
     margin: 1px 0;
     font-weight: 500;
+
+    button {
+        border: none;
+        background-color: #fff;
+        color: #FC814A;
+        font-weight: bold;
+        cursor: pointer;
+    }
 `;
