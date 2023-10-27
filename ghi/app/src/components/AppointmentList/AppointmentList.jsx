@@ -16,7 +16,7 @@ const AppointmentList = ({ appointments, setFire }) => {
     };
 
     const done = (id) => {
-        axios.put(`http://localhost:8080/api/appointments/${id}/finished/`).then(() => setFire(true)).catch(err => console.log(err))
+        axios.put(`http://localhost:8080/api/appointments/${id}/finish/`).then(() => setFire(true)).catch(err => console.log(err))
     };
 
     return (
