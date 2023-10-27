@@ -9,6 +9,7 @@ import AddAppointment from '../../components/AddAppointment/AddAppointment';
 const Service = () => {
     const [technicians, setTechnicians] = useState([]);
     const [appointments, setAppointments] = useState([]);
+    const [fire, setFire] = useState(false)
 
     useEffect(() => {
         let endpoints = [
@@ -20,9 +21,10 @@ const Service = () => {
             ([{ data: appointments }, { data: technicians }]) => {
                 setTechnicians(technicians.technicians);
                 setAppointments(appointments.appointments);
+                setFire(false)
             }
         );
-    }, []);
+    }, [fire]);
 
     return (
         <Wrapper>
@@ -42,7 +44,7 @@ const Service = () => {
                 <div
                     className='section'
                     id='three'
-                ><AddAppointment /></div>
+                ><AddAppointment technicians={technicians} setFire={setFire}/></div>
             </ServiceContainer>
         </Wrapper>
     );

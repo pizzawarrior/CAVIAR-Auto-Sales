@@ -1,28 +1,57 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { Wrapper, InventoryContainer } from './style';
-import Button from '../../components/Button/Button';
 import AutoList from '../../components/AutoList/AutoList';
-import axios from 'axios'
+import axios from 'axios';
+import Manufacturers from '../../components/Manufacturers/Manufacturers';
+import Vehicles from '../../components/Vehicles/Vehicles';
 
 const Inventory = () => {
-    const [autos, setAutos] = useState([])
+    const [autos, setAutos] = useState([]);
+    const [manufacturers, setManufacturer] = useState([]);
+    const [vehicles, setVehicles] = useState([]);
+    const [fire, setFire] = useState(false)
 
     useEffect(() => {
-        axios
-            .get('http://localhost:8100/api/automobiles/')
-            .then(({ data }) => setAutos(data.autos))
-            .catch((err) => console.log(err));
-    }, []);
+        let endpoints = [
+            'http://localhost:8100/api/automobiles/',
+            'http://localhost:8100/api/manufacturers/',
+            'http://localhost:8100/api/models/',
+        ];
 
-    console.log(autos)
+        Promise.all(endpoints.map((endpoint) => axios.get(endpoint))).then(
+            ([
+                { data: automobiles },
+                { data: manufacturer },
+                { data: models },
+            ]) => {
+                setAutos(automobiles.autos);
+                setManufacturer(manufacturer.manufacturers);
+                setVehicles(models.models);
+                setFire(false)
+            }
+        );
+    }, [fire]);
+
     return (
         <Wrapper>
             <InventoryContainer>
-                <div id='one'>
+                <div
+                    className='section'
+                    id='one'
+                >
+                    <Manufacturers manufacturers={manufacturers} setFire={setFire} />
                 </div>
-                <div id='two'></div>
-                <div id='three'>
-                    <AutoList autos={autos}/>
+                <div
+                    className='section'
+                    id='two'
+                >
+                    <Vehicles vehicles={vehicles} manufacturers={manufacturers} setFire={setFire} />
+                </div>
+                <div
+                    className='section'
+                    id='three'
+                >
+                    <AutoList autos={autos} />
                 </div>
             </InventoryContainer>
         </Wrapper>

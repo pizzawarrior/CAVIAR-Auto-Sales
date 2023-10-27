@@ -1,8 +1,9 @@
 import React from "react";
+import { Container } from "../Manufacturers/style";
 
 const AutoList = ({autos}) => {
   return (
-    <div>
+    <Container>
       <h1>Automobiles</h1>
       <table>
         <thead>
@@ -30,7 +31,7 @@ const AutoList = ({autos}) => {
           })}
         </tbody>
       </table>
-    </div>
+    </Container>
   );
 };
 

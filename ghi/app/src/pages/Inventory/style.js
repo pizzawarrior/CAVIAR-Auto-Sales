@@ -13,12 +13,13 @@ export const InventoryContainer = styled.div`
     grid-auto-rows: 42vh;
     padding: 22px 32px;
 
-    div {
+    .section {
         border: 3px solid #5296A5;
         border-radius: 5px;
-        background-color: #071013;
+        background-color: #140D4F;
         padding: 1em;
-        color: #e86252;
+        color: #DDDFDF;
+        overflow-y: scroll;
     }
 
     #one {

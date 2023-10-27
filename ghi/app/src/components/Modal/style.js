@@ -7,4 +7,19 @@ export const ModalContainer = styled.div`
     width: 15vw;
     top: 30vh;
     left: 40vw;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #5296A5;
+    border-radius: 4px;
+
+    div {
+        padding-left: 10px;
+    }
+    button {
+        margin-top: 20px;
+    }
+    #buttons {
+        display: flex;
+        padding: 5px;
+    }
 `;
