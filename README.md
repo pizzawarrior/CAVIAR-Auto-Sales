@@ -1,9 +1,13 @@
-# Caviar: Luxury Car Service and Inventory App
+# Caviar: Luxury Car Service and Sales
+
+About:\
+This project was built using Django for the backend, with a Postgres database. Docker is used for creating a stable environment to deploy the project in. React was used for the front end, along with some help from axios, and styled components.\
+Absolutely NO bootsrap or comparable style libraries were used in the creation of this project.
+
 
 Team:
-
-* Jessica Dickerson - Service 
-* Ian Norstad - Sales
+* Jessica Dickerson - Service backend and frontend
+* Ian Norstad - Sales backend and frontend
 
 ## Running the Project
 
@@ -12,11 +16,15 @@ Team:
 - docker volume create beta-data
 - docker-compose build
 - docker-compose up
+- open http://localhost:3000/ in your browser to view the application once the project is running in docker.
 
-## Design
+# App Design
+
+## Polling
+Pollers have been built for both microservices. They poll automobile data from the Inventory database every 60 seconds. 
 
 ## Service Microservice
-The microservice for all actions and informaton related to the service department of the dealership. The primary actions are to add technicians, add appointments, and update appointment statuses.
+The microservice for all actions and informaton related to the service department of the dealership. The primary actions are to add technicians, add appointments, and update appointment statuses. 
 
 ### Service Models
 1. AutomobileVO: this is the model created by the poller function. It saves vin and sold status by pulling the data from the Automobile model in Inventory.
