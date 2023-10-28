@@ -17,17 +17,20 @@ const AutoList = ({ autos, models, setFire }) => {
             color: color,
             year: year,
             vin: vin,
-            model_id: model
-        }
-        axios.post('http://localhost:8100/api/automobiles/', newCar).then(({data}) => {
-            console.log(data)
-            setFire(true)
-            setColor('')
-            setYear(2020)
-            setVin('')
-            setModel('')
-            setShowModal(false)
-        }).catch(err => console.log(err))
+            model_id: model,
+        };
+        axios
+            .post('http://localhost:8100/api/automobiles/', newCar)
+            .then(({ data }) => {
+                console.log(data);
+                setFire(true);
+                setColor('');
+                setYear(2020);
+                setVin('');
+                setModel('');
+                setShowModal(false);
+            })
+            .catch((err) => console.log(err));
     };
 
     return (

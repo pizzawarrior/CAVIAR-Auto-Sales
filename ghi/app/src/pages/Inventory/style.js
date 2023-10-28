@@ -14,11 +14,11 @@ export const InventoryContainer = styled.div`
     padding: 22px 32px;
 
     .section {
-        border: 3px solid #5296A5;
+        border: 3px solid #5296a5;
         border-radius: 5px;
-        background-color: #140D4F;
+        background-color: #140d4f;
         padding: 1em;
-        color: #DDDFDF;
+        color: #dddfdf;
         overflow-y: scroll;
     }
 
@@ -40,13 +40,13 @@ export const InventoryContainer = styled.div`
 export const ModalContainer = styled.div`
     padding: 32px 48px;
     position: absolute;
-    background-color: #DDDFDF;
+    background-color: #dddfdf;
     width: 15vw;
     top: 30vh;
     left: 40vw;
     display: flex;
     flex-direction: column;
-    border: 3px solid #5296A5;
+    border: 3px solid #5296a5;
     border-radius: 4px;
 
     div {

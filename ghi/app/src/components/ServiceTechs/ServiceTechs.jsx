@@ -25,13 +25,15 @@ const ServiceTechs = ({ technicians, setFire }) => {
             last_name: lastName,
             employee_id: employee,
         };
-        axios.post('http://localhost:8080/api/technicians/', newTechnician).then(() => {
-            setEmployee(0)
-            setFirstName('')
-            setLastName('')
-            setFire(true)
-            setShowModal(false)
-        })
+        axios
+            .post('http://localhost:8080/api/technicians/', newTechnician)
+            .then(() => {
+                setEmployee(0);
+                setFirstName('');
+                setLastName('');
+                setFire(true);
+                setShowModal(false);
+            });
     };
 
     return (
@@ -69,17 +71,19 @@ const ServiceTechs = ({ technicians, setFire }) => {
                     <br />
 
                     <div id='buttons'>
-                    <ButtonStyle onClick={() => handleAdd()}>
-                        ADD
-                    </ButtonStyle>
-                    <ButtonStyle onClick={() => {
-                        setShowModal(false)
-                        setFirstName('')
-                        setLastName('')
-                        setEmployee(0)
-                        }}>
-                        CANCEL
-                    </ButtonStyle>
+                        <ButtonStyle onClick={() => handleAdd()}>
+                            ADD
+                        </ButtonStyle>
+                        <ButtonStyle
+                            onClick={() => {
+                                setShowModal(false);
+                                setFirstName('');
+                                setLastName('');
+                                setEmployee(0);
+                            }}
+                        >
+                            CANCEL
+                        </ButtonStyle>
                     </div>
                 </ModalContainer>
             )}

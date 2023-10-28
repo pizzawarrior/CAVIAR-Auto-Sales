@@ -14,11 +14,11 @@ export const SalesContainer = styled.div`
     padding: 40px 32px;
 
     .section {
-        border: 3px solid #5296A5;
+        border: 3px solid #5296a5;
         border-radius: 5px;
-        background-color: #140D4F;
+        background-color: #140d4f;
         padding: 1em;
-        color: #DDDFDF;
+        color: #dddfdf;
     }
 
     #one {

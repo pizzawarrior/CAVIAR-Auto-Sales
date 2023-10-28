@@ -9,7 +9,7 @@ const Inventory = () => {
     const [autos, setAutos] = useState([]);
     const [manufacturers, setManufacturer] = useState([]);
     const [vehicles, setVehicles] = useState([]);
-    const [fire, setFire] = useState(false)
+    const [fire, setFire] = useState(false);
 
     useEffect(() => {
         let endpoints = [
@@ -27,7 +27,7 @@ const Inventory = () => {
                 setAutos(automobiles.autos);
                 setManufacturer(manufacturer.manufacturers);
                 setVehicles(models.models);
-                setFire(false)
+                setFire(false);
             }
         );
     }, [fire]);
@@ -39,19 +39,30 @@ const Inventory = () => {
                     className='section'
                     id='one'
                 >
-                    <Manufacturers manufacturers={manufacturers} setFire={setFire} />
+                    <Manufacturers
+                        manufacturers={manufacturers}
+                        setFire={setFire}
+                    />
                 </div>
                 <div
                     className='section'
                     id='two'
                 >
-                    <Vehicles vehicles={vehicles} manufacturers={manufacturers} setFire={setFire} />
+                    <Vehicles
+                        vehicles={vehicles}
+                        manufacturers={manufacturers}
+                        setFire={setFire}
+                    />
                 </div>
                 <div
                     className='section'
                     id='three'
                 >
-                    <AutoList autos={autos} models={vehicles} setFire={setFire} />
+                    <AutoList
+                        autos={autos}
+                        models={vehicles}
+                        setFire={setFire}
+                    />
                 </div>
             </InventoryContainer>
         </Wrapper>

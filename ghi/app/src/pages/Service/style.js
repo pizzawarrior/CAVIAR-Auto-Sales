@@ -1,19 +1,18 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ServiceContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    /* grid-auto-rows: minmax(40vh, auto); */
     grid-auto-rows: 40vh;
     padding: 40px 32px;
 
     .section {
-        border: 3px solid #5296A5;
+        border: 3px solid #5296a5;
         border-radius: 5px;
-        background-color: #140D4F;
+        background-color: #140d4f;
         padding: 1em;
-        color: #DDDFDF;
+        color: #dddfdf;
         overflow-y: scroll;
     }
 

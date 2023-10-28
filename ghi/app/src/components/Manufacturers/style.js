@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     background-color: white;
-    color: #140D4F;
+    color: #140d4f;
     padding: 12px 24px;
     border-radius: 4px;
-    border: 2px solid #FC814A;
+    border: 2px solid #fc814a;
 
     h1 {
         margin: 8px;

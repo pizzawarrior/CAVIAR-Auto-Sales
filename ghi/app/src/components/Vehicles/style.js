@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const VehicleRow = styled.div`
     display: flex;
@@ -12,4 +12,4 @@ export const VehicleRow = styled.div`
         width: 50px;
         height: auto;
     }
-`
+`;
