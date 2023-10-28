@@ -6,8 +6,8 @@ import Service from './pages/Service/Service';
 import SalesForm from './pages/SalesForm/SalesForm';
 
 function App() {
-  return (
-    <BrowserRouter>
+    return (
+        <BrowserRouter>
     <Nav />
         <Routes>
           <Route path="/" element={<Inventory />} />

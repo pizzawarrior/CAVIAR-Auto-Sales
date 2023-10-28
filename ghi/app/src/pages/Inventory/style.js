@@ -10,16 +10,16 @@ export const InventoryContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    /* grid-auto-rows: minmax(40vh, auto); */
-    grid-auto-rows: 40vh;
-    padding: 40px 32px;
+    grid-auto-rows: 42vh;
+    padding: 22px 32px;
 
-    div {
+    .section {
         border: 3px solid #5296A5;
         border-radius: 5px;
-        background-color: #071013;
+        background-color: #140D4F;
         padding: 1em;
-        color: #e86252;
+        color: #DDDFDF;
+        overflow-y: scroll;
     }
 
     #one {
@@ -34,5 +34,29 @@ export const InventoryContainer = styled.div`
     #three {
         grid-column: 1/3;
         grid-row: 2 / 3;
+    }
+`;
+
+export const ModalContainer = styled.div`
+    padding: 32px 48px;
+    position: absolute;
+    background-color: #DDDFDF;
+    width: 15vw;
+    top: 30vh;
+    left: 40vw;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #5296A5;
+    border-radius: 4px;
+
+    div {
+        padding-left: 10px;
+    }
+    button {
+        margin-top: 20px;
+    }
+    #buttons {
+        display: flex;
+        padding: 5px;
     }
 `;
