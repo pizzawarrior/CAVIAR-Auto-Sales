@@ -33,7 +33,7 @@ Pollers have been built for both microservices. They poll automobile data from t
 The microservice for all actions and informaton related to the service department of the dealership. The primary actions are to add technicians, add appointments, and update appointment statuses.
 
 ### Service Models
-1. AutomobileVO: this is the model created by the poller function. It saves vin and sold status by pulling the data from the Automobile model in Inventory.
+1. AutomobileVO: this model is created by the poller function. It saves the automobile's vin and sold status by pulling the data from the Automobile model in Inventory.
 2. Technician: saves a technician's employee id number, first name, and last name.
 3. Appointment: saves the appointment time, reason, status, and customer. Also records the automobile VIN and the technician (as a ForeignKey) performing the service.
 
