@@ -4,6 +4,7 @@ About:\
 This project was built using Django for the backend, with a Postgres database. Docker is used for creating a stable environment to deploy the project in. React was used for the front end, along with some help from axios, and styled components.\
 :no_entry_sign:	Absolutely NO bootsrap or comparable style libraries were used in the creation of this project.
 
+This application is designed for internal dealership use. The expected users would be dealership management and team leads for the monitoring of sales and service activities, as well as current inventory.
 
 Team:
 * Jessica Dickerson - Service backend and frontend
@@ -18,28 +19,31 @@ Team:
 - docker-compose up
 - open http://localhost:3000/ in your browser to view the application once the project is running in docker.
 
+To view the project, open http://localhost:3000/
+
+## Design
 # App Design
 
 ![Alt text](Caviar-Model-Diagram.png)
 
 ## Polling
-Pollers have been built for both microservices. They poll automobile data from the Inventory database every 60 seconds. 
+Pollers have been built for both microservices. They poll automobile data from the Inventory database every 60 seconds.
 
 ## Service Microservice
-The microservice for all actions and informaton related to the service department of the dealership. The primary actions are to add technicians, add appointments, and update appointment statuses. 
+The microservice for all actions and informaton related to the service department of the dealership. The primary actions are to add technicians, add appointments, and update appointment statuses.
 
 ### Service Models
-1. AutomobileVO: this is the model created by the poller function. It saves vin and sold status by pulling the data from the Automobile model in Inventory.
-2. Technician: saves a technician's employee number, and first and last name.
-3. Appointment: saves the appointment time, reason, status, and customer. Also records the automobile VIN and the technician, (as a ForeignKey,) performing the service.
+1. AutomobileVO: this model is created by the poller function. It saves the automobile's vin and sold status by pulling the data from the Automobile model in Inventory.
+2. Technician: saves a technician's employee id number, first name, and last name.
+3. Appointment: saves the appointment time, reason, status, and customer. Also records the automobile VIN and the technician (as a ForeignKey) performing the service.
 
 ### Service Endpoints
-1. api/technicians/ - GET all technicians or create a technician
-2. api/technicians/id/ - Delete a technician
-3. api/appointments/ - GET all appointments or create an appointment
-4. api/appointments/id/ - Delete an appointment
-5. api/appointments/id/cancel/ - Set an appointment's status to canceled
-6. api/appointments/id/finish/ - Set an appointment's status to finished
+1. api/technicians/ - get all technicians or create a technician
+2. api/technicians/:id/ - Delete a technician by employee id
+3. api/appointments/ - get all appointments or create an appointment
+4. api/appointments/:id/ - Delete an appointment by id
+5. api/appointments/:id/cancel/ - Update an appointment's status to canceled
+6. api/appointments/:id/finish/ - Update an appointment's status to finished
 
 ## Sales microservice
 The microservice for all actions and information related to the sales department of the dealership. Primary actions include adding customers, salespeople, and sales records to the database, as well as the ability to delete them.
@@ -57,5 +61,3 @@ The microservice for all actions and information related to the sales department
 4. api/salespeople/id/ - Delete a salesperson
 5. api/sales/ - List all sales or create a sale
 6. api/sales/id/ - Delete a sale
-
-

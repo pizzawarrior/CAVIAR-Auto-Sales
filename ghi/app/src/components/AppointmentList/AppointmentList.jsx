@@ -12,11 +12,17 @@ const AppointmentList = ({ appointments, setFire }) => {
         });
 
     const cancel = (id) => {
-        axios.put(`http://localhost:8080/api/appointments/${id}/cancel/`).then(() => setFire(true)).catch(err => console.log(err))
+        axios
+            .put(`http://localhost:8080/api/appointments/${id}/cancel/`)
+            .then(() => setFire(true))
+            .catch((err) => console.log(err));
     };
 
     const done = (id) => {
-        axios.put(`http://localhost:8080/api/appointments/${id}/finish/`).then(() => setFire(true)).catch(err => console.log(err))
+        axios
+            .put(`http://localhost:8080/api/appointments/${id}/finish/`)
+            .then(() => setFire(true))
+            .catch((err) => console.log(err));
     };
 
     return (

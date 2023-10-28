@@ -23,9 +23,9 @@ const Vehicles = ({ vehicles, manufacturers, setFire }) => {
             .then(({ data }) => {
                 setFire(true);
                 setShowModal(false);
-                setImage('')
-                setName('')
-                setManufacturer('')
+                setImage('');
+                setName('');
+                setManufacturer('');
             })
             .catch((err) => console.log(err));
     };
@@ -73,16 +73,18 @@ const Vehicles = ({ vehicles, manufacturers, setFire }) => {
                         ))}
                     </select>
                     <div id='buttons'>
-                    <ButtonStyle onClick={() => handleSubmit()}>
-                        ADD
-                    </ButtonStyle>
-                    <ButtonStyle onClick={() => {
-                        setShowModal(false)
-                        setImage('')
-                        setName('')
-                        }}>
-                        CANCEL
-                    </ButtonStyle>
+                        <ButtonStyle onClick={() => handleSubmit()}>
+                            ADD
+                        </ButtonStyle>
+                        <ButtonStyle
+                            onClick={() => {
+                                setShowModal(false);
+                                setImage('');
+                                setName('');
+                            }}
+                        >
+                            CANCEL
+                        </ButtonStyle>
                     </div>
                 </ModalContainer>
             )}
