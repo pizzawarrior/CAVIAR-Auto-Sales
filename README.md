@@ -1,5 +1,7 @@
 # CarCar
 
+An application for internal dealership use. The expected users would be dealership management and team leads for the monitoring of sales and service activities, as well as current inventory.
+
 Team:
 
 * Jessica Dickerson - Service
@@ -12,6 +14,8 @@ Team:
 - docker volume create beta-data
 - docker-compose build
 - docker-compose up
+
+To view the project, open http://localhost:3000/
 
 ## Design
 
