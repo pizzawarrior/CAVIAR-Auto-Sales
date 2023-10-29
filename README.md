@@ -35,7 +35,7 @@ The microservice for all actions and informaton related to the service departmen
 ### Service Models
 1. AutomobileVO: this model is created by the poller function. It saves the automobile's vin and sold status by pulling the data from the Automobile model in Inventory.
 2. Technician: saves a technician's employee id number, first name, and last name.
-3. Appointment: saves the appointment time, reason, status, and customer. Also records the automobile VIN and the technician (as a ForeignKey) performing the service.
+3. Appointment: saves the appointment time, reason, status, and customer. Also records the automobile VIN and the technician performing the service. There is a many to one relationship with the Technician and Appointment model, as well as the Appointment and AutomobileVO.
 
 ### Service Endpoints
 1. api/technicians/ - get all technicians or create a technician
