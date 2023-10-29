@@ -3,7 +3,7 @@ import Nav from './components/Nav/Nav';
 import Inventory from './pages/Inventory/Inventory';
 import Sales from './pages/Sales/Sales';
 import Service from './pages/Service/Service';
-import SalesForms from './components/SalesForms/SalesForms';
+import SalesForms from './pages/SalesForms/SalesForms';
 
 function App() {
     return (
