@@ -30,7 +30,6 @@ export default function Nav() {
                 <RightContainer>
                     <NavbarLink to='/sales'>Sales Department</NavbarLink>
                     <NavbarLink to='/service'>Service Department</NavbarLink>
-                    <NavbarLink to='/sales-form'>Add Sales Forms</NavbarLink>
                     <OpenLinksBtn
                         onClick={() => {
                             setExtendNavBar((curr) => !curr);

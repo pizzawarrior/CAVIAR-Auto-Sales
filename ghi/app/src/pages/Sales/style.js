@@ -19,6 +19,7 @@ export const SalesContainer = styled.div`
         background-color: #140d4f;
         padding: 1em;
         color: #dddfdf;
+        overflow-y: scroll;
     }
 
     #one {

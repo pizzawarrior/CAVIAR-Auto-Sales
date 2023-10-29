@@ -39,13 +39,15 @@ const AddSalespersonForm = ({ salespeople, setFire }) => {
           <div id='buttonBox'>
           <h1>Salespeople</h1>
                 <Button
-                    text='Add Technician'
+                    text='Add Salesperson'
                     showModal={setShowModal}
                 />
             </div>
 
             {showModal && (
                 <ModalContainer>
+
+            <h1>Add A Salesperson</h1>
             <input
                 type='text'
                 onChange={(e) => setFirstName(e.target.value)}

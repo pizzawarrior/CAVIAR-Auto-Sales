@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Wrapper, SalesContainer } from './style';
+import AddSaleForm from '../../components/AddSaleForm/AddSaleForm';
 import AddCustomerForm from '../../components/AddCustomer/AddCustomerForm';
 import AddSalespersonForm from '../../components/AddSalespersonForm/AddSalespersonForm';
-import SalesList from '../../components/SalesList/SalesList';
+// import SalesList from '../../components/SalesList/SalesList';
 import axios from 'axios';
 
 const Sales = () => {
+    const [automobiles, setAutomobiles] = useState([])
     const [customers, setCustomers] = useState([]);
     const [salespeople, setSalespeople] = useState([]);
     const [sales, setSales] = useState([]);
@@ -16,14 +18,16 @@ const Sales = () => {
     let endpoints = [
       'http://localhost:8090/api/customers/',
       'http://localhost:8090/api/salespeople/',
+      'http://localhost:8100/api/automobiles/',
       'http://localhost:8090/api/sales/'
     ];
 
     Promise.all(endpoints.map((endpoint) => axios.get(endpoint))).then(
-      ([{ data: customers }, { data: salespeople }, { data: sales }]) => {
+      ([{ data: customers }, { data: salespeople }, { data: sales }, { data: autos}]) => {
         setCustomers(customers.customers);
         setSalespeople(salespeople.salespeople);
         setSales(sales.sales);
+        setAutomobiles(autos.automobiles);
         setFire(false)
       }
     );
@@ -62,13 +66,16 @@ const Sales = () => {
                     className='section'
                     id='three'
                 >
-                    <SalesList
+                    <AddSaleForm
                         setFire={setFire}
                         handleFilter={handleFilter}
                         sales={sales}
                         setFilterValue={setFilterValue}
                         salespeople={salespeople}
                         filterValue={filterValue}
+                        autos={automobiles}
+                        customers={customers}
+
                     />
                 </div>
             </SalesContainer>
