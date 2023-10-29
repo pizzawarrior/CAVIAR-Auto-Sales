@@ -25,15 +25,13 @@ const ServiceTechs = ({ technicians, setFire }) => {
             last_name: lastName,
             employee_id: employee,
         };
-        axios
-            .post('http://localhost:8080/api/technicians/', newTechnician)
-            .then(() => {
-                setEmployee(0);
-                setFirstName('');
-                setLastName('');
-                setFire(true);
-                setShowModal(false);
-            });
+        axios.post('http://localhost:8080/api/technicians/', newTechnician).then(() => {
+            setEmployee(0)
+            setFirstName('')
+            setLastName('')
+            setFire(true)
+            setShowModal(false)
+        })
     };
 
     return (
@@ -47,7 +45,7 @@ const ServiceTechs = ({ technicians, setFire }) => {
             </div>
             {showModal && (
                 <ModalContainer>
-                    <h1>New Model</h1>
+                    <h1>Add Technician</h1>
                     <input
                         type='text'
                         placeholder='First Name'
