@@ -1,11 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
-import { TechDetails } from './style';
-import Button from '../Button/Button';
-import { ButtonStyle } from '../Button/style';
-import { ModalContainer } from '../../pages/Inventory/style';
-import { Container } from '../Manufacturers/style';
 
 
 const AddSaleForm = ({autos, customers, salespeople}) => {

@@ -20,8 +20,6 @@ const SalesList = ({
         <Container>
             <h1>Sales Records</h1>
 
-            <p>Select A Salesperson From The Dropdown</p>
-
         <select
         onChange={(e) => setFilterValue(e.target.value)}
         // value={salesperson}
