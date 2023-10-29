@@ -47,9 +47,6 @@ export default function Nav() {
                     <NavbarLinkExtended to='/service'>
                         Service Department
                     </NavbarLinkExtended>
-                    <NavbarLinkExtended to='/sales-form'>
-                        Add Sales Forms
-                    </NavbarLinkExtended>
                 </NavbarExtendedContainer>
             )}
         </NavStyle>

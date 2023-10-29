@@ -23,11 +23,11 @@ const Sales = () => {
     ];
 
     Promise.all(endpoints.map((endpoint) => axios.get(endpoint))).then(
-      ([{ data: customers }, { data: salespeople }, { data: sales }, { data: autos}]) => {
+      ([{ data: customers }, { data: salespeople }, { data: autos}, { data: sales }]) => {
         setCustomers(customers.customers);
         setSalespeople(salespeople.salespeople);
         setSales(sales.sales);
-        setAutomobiles(autos.automobiles);
+        setAutomobiles(autos.autos);
         setFire(false)
       }
     );

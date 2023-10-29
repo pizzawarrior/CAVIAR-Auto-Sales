@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { TechDetails } from "./style";
+// import { TechDetails } from "./style";
 import Button from "../Button/Button";
 import { ButtonStyle } from "../Button/style";
 import { ModalContainer } from "../../pages/Inventory/style";

@@ -38,10 +38,6 @@ class Sale(models.Model):
         on_delete=models.CASCADE
     )
 
-     # def get_api_url(self):
-    #     return reverse("api_automobile", kwargs={"vin": self.vin})
-
-
     customer = models.ForeignKey(
         Customer,
         related_name="sales",
