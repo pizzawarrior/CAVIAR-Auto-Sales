@@ -95,7 +95,7 @@ const AddCustomerForm = ({ customers, setFire }) => {
                 setFirstName('');
                 setLastName('');
                 setAddress('');
-                setPhoneNumber('#')
+                setPhoneNumber('')
             }}
         >
             CANCEL

@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Wrapper, SalesContainer } from './style';
 import AddCustomerForm from '../../components/AddCustomer/AddCustomerForm';
-// import CustomerList from '../../components/CustomerList/CustomerList';
-import SalespeopleList from '../../components/SalespeopleList/SalespeopleList';
+import AddSalespersonForm from '../../components/AddSalespersonForm/AddSalespersonForm';
 import SalesList from '../../components/SalesList/SalesList';
 import axios from 'axios';
 
@@ -37,42 +36,6 @@ const Sales = () => {
     setSales(filteredSale);
 };
 
-
-//   })
-
-//     useEffect(() => {
-//         axios
-//             .get('http://localhost:8090/api/customers/')
-//             .then(({ data }) => setCustomers(data.customers))
-//             .catch((err) => console.log(err));
-//     }, [fire]);
-
-//     useEffect(() => {
-//         axios
-//             .get('http://localhost:8090/api/salespeople/')
-//             .then(({ data }) => {
-//                 setSalespeople(data.salespeople);
-//             })
-//             .catch((err) => console.log(err));
-//     }, [fire]);
-
-//     const handleFilter = () => {
-//         const filteredSale = sales.filter(
-//             (item) => item.salesperson.employee_id === parseInt(filterValue)
-//         );
-//         setSales(filteredSale);
-//     };
-
-//     useEffect(() => {
-//         axios
-//             .get('http://localhost:8090/api/sales/')
-//             .then(({ data }) => {
-//                 setSales(data.sales);
-//                 setFire(false);
-//             })
-//             .catch((err) => console.log(err));
-//     }, [fire]);
-
     return (
         <Wrapper>
             <SalesContainer>
@@ -80,7 +43,7 @@ const Sales = () => {
                     className='section'
                     id='two'
                 >
-                    <SalespeopleList
+                    <AddSalespersonForm
                         salespeople={salespeople}
                         setFire={setFire}
                     />

@@ -77,7 +77,7 @@ const ServiceTechs = ({ technicians, setFire }) => {
                                 setShowModal(false);
                                 setFirstName('');
                                 setLastName('');
-                                setEmployee(0);
+                                setEmployee('');
                             }}
                         >
                             CANCEL

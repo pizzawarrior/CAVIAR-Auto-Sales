@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { TechDetails } from './style';
+import Button from '../Button/Button';
+import { ButtonStyle } from '../Button/style';
+import { ModalContainer } from '../../pages/Inventory/style';
+import { Container } from '../Manufacturers/style';
 
-const AddSalespersonForm = () => {
+const AddSalespersonForm = ({ salespeople, setFire }) => {
+    const [showModal, setShowModal] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [employeeId, setEmployeeId] = useState('');
+
+    const handleDelete = (id) => {
+        axios
+            .delete(`http://localhost:8090/api/salespeople/${id}/`)
+            .then(() => setFire(true))
+            .catch((err) => console.log(err));
+    };
 
     const handleClick = () => {
         axios
@@ -22,30 +35,74 @@ const AddSalespersonForm = () => {
     };
 
     return (
-        <div>
-            <label>First Name</label>
+        <Container>
+          <div id='buttonBox'>
+          <h1>Salespeople</h1>
+                <Button
+                    text='Add Technician'
+                    showModal={setShowModal}
+                />
+            </div>
+
+            {showModal && (
+                <ModalContainer>
             <input
                 type='text'
                 onChange={(e) => setFirstName(e.target.value)}
                 value={firstName}
+                placeholder='First Name'
             />
+            <br />
 
-            <label>Last Name</label>
             <input
                 type='text'
                 onChange={(e) => setLastName(e.target.value)}
                 value={lastName}
+                placeholder='Last Name'
             />
+            <br />
 
-            <label>Employee ID</label>
             <input
                 type='text'
                 onChange={(e) => setEmployeeId(e.target.value)}
                 value={employeeId}
+                placeholder='Employee ID'
             />
+            <br />
 
-            <button onClick={() => handleClick()}>Submit</button>
+            <div id='buttons'>
+            <ButtonStyle onClick={() => handleClick()}>
+                Submit
+            </ButtonStyle>
+
+            <ButtonStyle
+                onClick={() => {
+                    setShowModal(false)
+                    setFirstName('')
+                    setLastName('')
+                    setEmployeeId('')
+                }}
+                > CANCEL
+            </ButtonStyle>
         </div>
+        </ModalContainer>
+        )}
+            {salespeople.map((salesperson) => {
+                    return (
+                        <TechDetails key={salesperson.employee_id}>
+                            <p>{salesperson.first_name}</p>
+                            <p>{salesperson.last_name}</p>
+                            <p>{salesperson.employee_id}</p>
+                            <button
+                                onClick={() =>
+                                    handleDelete(salesperson.id)
+                                }
+                            >
+                                Delete
+                            </button>
+                        </TechDetails>
+            )})}
+        </Container>
     );
 };
 
