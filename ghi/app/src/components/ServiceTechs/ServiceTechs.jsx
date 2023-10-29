@@ -26,7 +26,7 @@ const ServiceTechs = ({ technicians, setFire }) => {
             employee_id: employee,
         };
         axios.post('http://localhost:8080/api/technicians/', newTechnician).then(() => {
-            setEmployee(0)
+            setEmployee('Employee ID')
             setFirstName('')
             setLastName('')
             setFire(true)
@@ -45,7 +45,7 @@ const ServiceTechs = ({ technicians, setFire }) => {
             </div>
             {showModal && (
                 <ModalContainer>
-                    <h1>New Model</h1>
+                    <h1>Add Technician</h1>
                     <input
                         type='text'
                         placeholder='First Name'

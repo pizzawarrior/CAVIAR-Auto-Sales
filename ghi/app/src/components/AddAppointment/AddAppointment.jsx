@@ -73,7 +73,7 @@ const AddAppointment = ({ technicians, setFire }) => {
             </select>
             <br />
             <textarea name="reason" id="reason" cols="60" rows="8" value={reason} onChange={(e) => setReason(e.target.value)}></textarea><br />
-            <ButtonStyle onClick={() => handleSubmit()}>ADD</ButtonStyle>
+            <ButtonStyle onClick={() => handleSubmit()}>Add</ButtonStyle>
         </Container>
     );
 };

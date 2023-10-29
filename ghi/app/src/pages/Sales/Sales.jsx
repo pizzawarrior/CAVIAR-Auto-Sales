@@ -39,7 +39,6 @@ const Sales = () => {
         setSales(filteredSale)
     }
 
-
     useEffect(() => {
         axios
             .get('http://localhost:8090/api/sales/')

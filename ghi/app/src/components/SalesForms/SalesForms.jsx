@@ -1,11 +1,12 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-import AddCustomerForm from '../../components/AddCustomer/AddCustomerForm'
-import AddSalespersonForm from '../../components/AddSalespersonForm/AddSalespersonForm'
-import AddSaleForm from '../../components/AddSaleForm/AddSaleForm'
+import AddCustomerForm from '../AddCustomer/AddCustomerForm'
+import AddSalespersonForm from '../AddSalespersonForm/AddSalespersonForm'
+import AddSaleForm from '../AddSaleForm/AddSaleForm'
+import { Container } from "../Manufacturers/style";
 
 
-const SalesForm = () => {
+const SalesForms = () => {
 
   const [automobiles, setAutomobiles] = useState([])
   const [salespeople, setSalespeople] = useState([])
@@ -29,7 +30,6 @@ const SalesForm = () => {
           .catch((err) => console.log(err));
   }, []);
 
-
   useEffect(() => {
       axios
           .get('http://localhost:8090/api/customers/')
@@ -42,15 +42,24 @@ const SalesForm = () => {
 
   return (
     <>
-    <AddCustomerForm />
-    <AddSalespersonForm />
-    <AddSaleForm
-    salespeople={salespeople}
-    autos={automobiles}
-    customers={customers}
-    />
-    </>
+    <Container>
+        <AddCustomerForm />
+    </Container>
+
+    <Container>
+        <AddSalespersonForm />
+    </Container>
+
+    <Container>
+        <AddSaleForm
+        salespeople={salespeople}
+        autos={automobiles}
+        customers={customers}
+        />
+    </Container>
+        </>
+
   )
 }
 
-export default SalesForm
+export default SalesForms

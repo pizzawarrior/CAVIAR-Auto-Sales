@@ -46,7 +46,8 @@ const SalesList = ({sales, setFilterValue, handleFilter, setFire, salespeople}) 
         <thead>
           <tr>
             <th>Employee ID</th>
-            <th>Name</th>
+            <th>Salesperson Name</th>
+            <th>Customer Name</th>
             <th>VIN</th>
             <th>Price</th>
           </tr>
@@ -57,6 +58,7 @@ const SalesList = ({sales, setFilterValue, handleFilter, setFire, salespeople}) 
               <tr key={sale.id}>
                 <td>{sale.salesperson.employee_id}</td>
                 <td>{sale.salesperson.first_name} {sale.salesperson.last_name}</td>
+                <td>{sale.customer.first_name} {sale.customer.last_name}</td>
                 <td>{sale.automobile.vin}</td>
                 <td>{sale.price}</td>
                 <td><button onClick={() => handleDelete(sale.id)}>Delete</button></td>
