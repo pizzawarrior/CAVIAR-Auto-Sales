@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<Inventory />} />
           <Route path="/sales" element={<Sales />} />
           <Route path="/service" element={<Service />} />
-          <Route path="/sales-form" element={<SalesForm />} />
+          <Route path="/sales-form" element={<SalesForms />} />
         </Routes>
     </BrowserRouter>
   );
