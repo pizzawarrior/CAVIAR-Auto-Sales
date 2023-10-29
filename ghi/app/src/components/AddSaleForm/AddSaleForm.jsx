@@ -21,7 +21,8 @@ const AddSaleForm = ({
   const [vin, setVin] = useState("");
   const [salesperson, setSalesperson] = useState("");
   const [customer, setCustomer] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState('');
+  // const [sold, SetSold] = useState(false)
 
   const handleDelete = (id) => {
     axios
@@ -30,25 +31,25 @@ const AddSaleForm = ({
       .catch((err) => console.log(err));
   };
 
-  console.log(autos)
-
   const handleClick = () => {
     console.log("click");
 
     axios
       .post("http://localhost:8090/api/sales/", {
         automobile: vin,
+        // sold: sold,
         salesperson: salesperson,
         customer: customer,
         price: price,
       })
       .then(({ data }) => {
-        console.log(data);
-        setFire(true);
         setVin("");
         setCustomer("");
         setSalesperson("");
         setPrice("");
+        // SetSold(true)
+        setFire(true);
+        setShowModal(false);
       })
       .catch((err) => console.log(err));
   };
@@ -142,10 +143,8 @@ const AddSaleForm = ({
       )}
       <select
         onChange={(e) => setFilterValue(e.target.value)}
-        // value={salesperson}
         name="salesperson"
         id="salesperson"
-        // className={dropdown}
         required
       >
         <option>Choose a salesperson...</option>

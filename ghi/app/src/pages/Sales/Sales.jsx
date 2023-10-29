@@ -3,7 +3,6 @@ import { Wrapper, SalesContainer } from './style';
 import AddSaleForm from '../../components/AddSaleForm/AddSaleForm';
 import AddCustomerForm from '../../components/AddCustomer/AddCustomerForm';
 import AddSalespersonForm from '../../components/AddSalespersonForm/AddSalespersonForm';
-// import SalesList from '../../components/SalesList/SalesList';
 import axios from 'axios';
 
 const Sales = () => {

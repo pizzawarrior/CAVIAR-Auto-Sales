@@ -30,6 +30,9 @@ const AddSalespersonForm = ({ salespeople, setFire }) => {
                 setFirstName('');
                 setLastName('');
                 setEmployeeId('');
+                setFire(true);
+                setShowModal(false);
+
             })
             .catch((err) => console.log(err));
     };

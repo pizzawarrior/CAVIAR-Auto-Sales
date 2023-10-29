@@ -28,6 +28,7 @@ export default function Nav() {
                     </NavbarLinkContainer>
                 </LeftContainer>
                 <RightContainer>
+                    <NavbarLink to='/'>Current Inventory</NavbarLink>
                     <NavbarLink to='/sales'>Sales Department</NavbarLink>
                     <NavbarLink to='/service'>Service Department</NavbarLink>
                     <OpenLinksBtn

@@ -8,7 +8,7 @@ import { ModalContainer } from '../../pages/Inventory/style';
 const AutoList = ({ autos, models, setFire }) => {
     const [showModal, setShowModal] = useState(false);
     const [color, setColor] = useState('');
-    const [year, setYear] = useState(2020);
+    const [year, setYear] = useState('');
     const [vin, setVin] = useState('');
     const [model, setModel] = useState('');
 
@@ -25,7 +25,7 @@ const AutoList = ({ autos, models, setFire }) => {
                 console.log(data);
                 setFire(true);
                 setColor('');
-                setYear(2020);
+                setYear('');
                 setVin('');
                 setModel('');
                 setShowModal(false);

@@ -30,12 +30,12 @@ const AddCustomerForm = ({ customers, setFire }) => {
     };
     axios
       .post("http://localhost:8090/api/customers/", newCustomer).then(() => {
-        setFirstName("")
-        setLastName("")
-        setAddress("")
-        setPhoneNumber("")
-        setFire(true)
-        setShowModal(false)
+        setFirstName("");
+        setLastName("");
+        setAddress("");
+        setPhoneNumber("");
+        setFire(true);
+        setShowModal(false);
       })
     };
 
