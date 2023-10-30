@@ -14,8 +14,8 @@ const Vehicles = ({ vehicles, manufacturers, setFire }) => {
 
     const handleSubmit = () => {
         const newModel = {
-            name: name.value,
-            picture_url: image.value,
+            name: name,
+            picture_url: image,
             manufacturer_id: manufacturer,
         };
         axios

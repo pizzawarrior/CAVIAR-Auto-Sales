@@ -12,7 +12,7 @@ const Manufacturers = ({ manufacturers, setFire }) => {
     const handleClick = () => {
         axios
             .post('http://localhost:8100/api/manufacturers/', {
-                name: name.value,
+                name: name
             })
             .then(({ data }) => {
                 setShowModal(false);
