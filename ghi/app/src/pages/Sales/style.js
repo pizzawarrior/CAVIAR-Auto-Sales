@@ -14,7 +14,7 @@ export const SalesContainer = styled.div`
     padding: 40px 32px;
 
     .section {
-        border: 3px solid #5296a5;
+        border: 2px solid #5694f0;
         border-radius: 5px;
         background-color: #140d4f;
         padding: 1em;

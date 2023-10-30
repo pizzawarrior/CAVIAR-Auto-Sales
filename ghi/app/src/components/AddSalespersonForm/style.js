@@ -5,7 +5,7 @@ export const ListContainer = styled.div`
     color: #140D4F;
     padding: 12px;
     border-radius: 4px;
-    border: 2px solid #FC814A;
+    border: 2px solid #dddfdf;
 
     h1 {
         margin: 8px;
@@ -15,16 +15,18 @@ export const ListContainer = styled.div`
 export const TechDetails = styled.div`
     display: flex;
     justify-content: space-around;
-    padding: 8px;
-    border: 3px solid #5296a5;
-    margin: 1px 0;
+    padding: 0, 8px;
+    /* Gray */
+    border: 1px solid #dddfdf;
+    border-radius: 4px;
+    margin: 10px 0;
     font-weight: 500;
 
     button {
         border: none;
         background-color: #fff;
-        color: #FC814A;
-        font-weight: bold;
+        color: red;
         cursor: pointer;
     }
+
 `;

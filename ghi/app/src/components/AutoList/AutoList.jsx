@@ -4,6 +4,7 @@ import { Container } from '../Manufacturers/style';
 import Button from '../Button/Button';
 import { ButtonStyle } from '../Button/style';
 import { ModalContainer } from '../../pages/Inventory/style';
+import { TechDetails } from "./style";
 
 const AutoList = ({ autos, models, setFire }) => {
     const [showModal, setShowModal] = useState(false);
@@ -92,6 +93,7 @@ const AutoList = ({ autos, models, setFire }) => {
                     </div>
                 </ModalContainer>
             )}
+            <TechDetails>
             <table>
                 <thead>
                     <tr>
@@ -118,6 +120,7 @@ const AutoList = ({ autos, models, setFire }) => {
                     })}
                 </tbody>
             </table>
+            </TechDetails>
         </Container>
     );
 };

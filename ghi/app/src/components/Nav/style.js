@@ -3,8 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const NavStyle = styled.nav`
     width: 100%;
-
-    background-color: #82ddf0;
+    background-color: #5694f0;
     display: flex;
     flex-direction: column;
 
@@ -48,8 +47,8 @@ export const RightContainer = styled.div`
 
 // LINKS
 export const NavbarLink = styled(NavLink)`
-    color: black;
-    font-weight: bold;
+    color: white;
+    /* font-weight: bold; */
     font-size: large;
     text-decoration: none;
     margin: 15px;

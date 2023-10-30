@@ -3,8 +3,7 @@ import axios from "axios";
 import Button from "../Button/Button";
 import { ButtonStyle } from "../Button/style";
 import { ModalContainer } from "../../pages/Inventory/style";
-import { Container } from "../Manufacturers/style";
-
+import { TechDetails, Container } from "./style";
 
 const AddSaleForm = ({
   autos,
@@ -19,7 +18,7 @@ const AddSaleForm = ({
   const [vin, setVin] = useState("");
   const [salesperson, setSalesperson] = useState("");
   const [customer, setCustomer] = useState("");
-  const [price, setPrice] = useState('');
+  const [price, setPrice] = useState("");
 
   const handleDelete = (id) => {
     axios
@@ -59,7 +58,6 @@ const AddSaleForm = ({
       {showModal && (
         <ModalContainer>
           <h1>Record a New Sale</h1>
-
           <select
             onChange={(e) => setVin(e.target.value)}
             name="automobile"
@@ -134,61 +132,67 @@ const AddSaleForm = ({
               CANCEL
             </ButtonStyle>
           </div>
-        </ModalContainer >
+        </ModalContainer>
       )}
-      <select
-        onChange={(e) => setFilterValue(e.target.value)}
-        name="salesperson"
-        id="salesperson"
-        required
-      >
-        <option>Choose a salesperson...</option>
-        {salespeople.map((salesperson) => {
-          return (
-            <option
-              key={salesperson.employee_id}
-              value={salesperson.employee_id}
-            >
-              {salesperson.first_name} {salesperson.last_name}
-            </option>
-          );
-        })}
-      </select>
-
-      <button onClick={() => handleFilter()}>Submit</button>
-      <button onClick={() => setFire(true)}>Clear</button>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Employee ID</th>
-            <th>Salesperson Name</th>
-            <th>Customer Name</th>
-            <th>VIN</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sales.map((sale) => {
+      <div id="search-row">
+        <select
+          onChange={(e) => setFilterValue(e.target.value)}
+          name="salesperson"
+          id="salesperson"
+          required
+        >
+          <option>Choose a salesperson...</option>
+          {salespeople.map((salesperson) => {
             return (
-              <tr key={sale.id}>
-                <td>{sale.salesperson.employee_id}</td>
-                <td>
-                  {sale.salesperson.first_name} {sale.salesperson.last_name}
-                </td>
-                <td>
-                  {sale.customer.first_name} {sale.customer.last_name}
-                </td>
-                <td>{sale.automobile.vin}</td>
-                <td>{sale.price}</td>
-                <td>
-                  <button onClick={() => handleDelete(sale.id)}>Delete</button>
-                </td>
-              </tr>
+              <option
+                key={salesperson.employee_id}
+                value={salesperson.employee_id}
+              >
+                {salesperson.first_name} {salesperson.last_name}
+              </option>
             );
           })}
-        </tbody>
-      </table>
+        </select>
+
+        <button onClick={() => handleFilter()}>Submit</button>
+        <button onClick={() => setFire(true)}>Clear</button>
+      </div>
+
+      <TechDetails>
+        <table>
+          <thead>
+            <tr>
+              <th>Employee ID</th>
+              <th>Salesperson Name</th>
+              <th>Customer Name</th>
+              <th>VIN</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sales.map((sale) => {
+              return (
+                <tr key={sale.id}>
+                  <td>{sale.salesperson.employee_id}</td>
+                  <td>
+                    {sale.salesperson.first_name} {sale.salesperson.last_name}
+                  </td>
+                  <td>
+                    {sale.customer.first_name} {sale.customer.last_name}
+                  </td>
+                  <td>{sale.automobile.vin}</td>
+                  <td>{sale.price}</td>
+                  <td>
+                    <button onClick={() => handleDelete(sale.id)}>
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </TechDetails>
     </Container>
   );
 };

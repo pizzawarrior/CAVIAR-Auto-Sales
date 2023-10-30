@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import logo from './assets/caviar-logo.png';
+import logo from './assets/caviar-logo3.png';
 import {
     NavStyle,
     LeftContainer,

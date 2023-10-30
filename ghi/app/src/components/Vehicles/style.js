@@ -4,7 +4,8 @@ export const VehicleRow = styled.div`
     display: flex;
     justify-content: space-evenly;
     padding: 8px;
-    border: 3px solid #5296a5;
+    border: 1px solid #dddfdf;
+    border-radius: 4px;
     margin: 1px 0;
     font-weight: 500;
 

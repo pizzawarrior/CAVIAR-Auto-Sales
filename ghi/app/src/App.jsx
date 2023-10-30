@@ -3,6 +3,8 @@ import Nav from "./components/Nav/Nav";
 import Inventory from "./pages/Inventory/Inventory";
 import Sales from "./pages/Sales/Sales";
 import Service from "./pages/Service/Service";
+import Footer from "./components/Footer/Footer";
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
         <Route path="/sales" element={<Sales />} />
         <Route path="/service" element={<Service />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
