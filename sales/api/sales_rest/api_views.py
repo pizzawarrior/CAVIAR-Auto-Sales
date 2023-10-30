@@ -53,13 +53,9 @@ def api_detail_customer(request, id):
 
     elif request.method == 'DELETE':
         try:
-            customer = Customer.objects.get(id=id)
-            customer.delete()
-            return JsonResponse(
-                customer,
-                encoder=CustomerEncoder,
-                safe=False
-            )
+            count, _ = Customer.objects.get(id=id).delete()
+            return JsonResponse({"count": count > 0})
+
         except Customer.DoesNotExist:
             response = JsonResponse({"Error": "Customer does not exist"})
             response.status_code=404
@@ -133,13 +129,9 @@ def api_detail_salespeople(request, id):
 
     elif request.method == 'DELETE':
         try:
-            salesperson = Salesperson.objects.get(id=id)
-            salesperson.delete()
-            return JsonResponse(
-                salesperson,
-                encoder=SalespersonEncoder,
-                safe=False
-            )
+            count, _ = Salesperson.objects.get(id=id).delete()
+            return JsonResponse({"deleted": count > 0})
+
         except Salesperson.DoesNotExist:
             response = JsonResponse({"Error": "Salesperson does not exist"})
             response.status_code=404
