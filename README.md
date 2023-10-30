@@ -17,7 +17,6 @@ Team:
 - docker volume create beta-data
 - docker-compose build
 - docker-compose up
-- open http://localhost:3000/ in your browser to view the application once the project is running in docker.
 
 To view the project, open http://localhost:3000/
 
