@@ -1,12 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-// import { TechDetails } from "./style";
 import Button from "../Button/Button";
 import { ButtonStyle } from "../Button/style";
 import { ModalContainer } from "../../pages/Inventory/style";
 import { Container } from "../Manufacturers/style";
 
-// import {useNavigate} from 'react-router-dom'
 
 const AddSaleForm = ({
   autos,
@@ -22,7 +20,6 @@ const AddSaleForm = ({
   const [salesperson, setSalesperson] = useState("");
   const [customer, setCustomer] = useState("");
   const [price, setPrice] = useState('');
-  // const [sold, SetSold] = useState(false)
 
   const handleDelete = (id) => {
     axios
@@ -37,7 +34,6 @@ const AddSaleForm = ({
     axios
       .post("http://localhost:8090/api/sales/", {
         automobile: vin,
-        // sold: sold,
         salesperson: salesperson,
         customer: customer,
         price: price,
@@ -47,7 +43,6 @@ const AddSaleForm = ({
         setCustomer("");
         setSalesperson("");
         setPrice("");
-        // SetSold(true)
         setFire(true);
         setShowModal(false);
       })
