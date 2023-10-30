@@ -2,8 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import Button from "../Button/Button";
 import { ButtonStyle } from "../Button/style";
-import { ModalContainer } from "../../pages/Inventory/style";
+import { ModalContainer } from "../../pages/Sales/style";
 import { TechDetails, Container } from "./style";
+import { SalespersonFilter } from "./style";
 
 const AddSaleForm = ({
   autos,
@@ -134,7 +135,8 @@ const AddSaleForm = ({
           </div>
         </ModalContainer>
       )}
-      <div id="search-row">
+
+      <SalespersonFilter>
         <select
           onChange={(e) => setFilterValue(e.target.value)}
           name="salesperson"
@@ -156,7 +158,7 @@ const AddSaleForm = ({
 
         <button onClick={() => handleFilter()}>Submit</button>
         <button onClick={() => setFire(true)}>Clear</button>
-      </div>
+      </SalespersonFilter>
 
       <TechDetails>
         <table>

@@ -1,15 +1,22 @@
 import styled from "styled-components";
 
-export const ListContainer = styled.div`
+export const Container = styled.div`
     background-color: white;
     color: #140D4F;
-    padding: 12px;
+    padding: 12px 24px;
     border-radius: 4px;
     border: 2px solid #dddfdf;
 
     h1 {
         margin: 8px;
     }
+
+    #buttonBox {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
 `;
 
 export const TechDetails = styled.div`

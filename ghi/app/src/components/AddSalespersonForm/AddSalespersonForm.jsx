@@ -3,8 +3,8 @@ import axios from 'axios';
 import { TechDetails } from './style';
 import Button from '../Button/Button';
 import { ButtonStyle } from '../Button/style';
-import { ModalContainer } from '../../pages/Inventory/style';
-import { Container } from '../Manufacturers/style';
+import { ModalContainer } from '../../pages/Sales/style';
+import { Container } from './style';
 
 const AddSalespersonForm = ({ salespeople, setFire }) => {
     const [showModal, setShowModal] = useState(false);

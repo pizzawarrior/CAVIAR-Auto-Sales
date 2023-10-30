@@ -17,7 +17,7 @@ const Manufacturers = ({ manufacturers, setFire }) => {
             .then(({ data }) => {
                 setShowModal(false);
                 setFire(true);
-                console.log(data);
+                setName('');
             })
             .catch((err) => console.log(err));
     };

@@ -36,3 +36,27 @@ export const SalesContainer = styled.div`
         grid-row: 2 / 3;
     }
 `;
+
+export const ModalContainer = styled.div`
+    padding: 32px 48px;
+    position: absolute;
+    background-color: #dddfdf;
+    width: 15vw;
+    top: 30vh;
+    left: 40vw;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #5694f0;
+    border-radius: 4px;
+
+    div {
+        padding-left: 10px;
+    }
+    button {
+        margin-top: 20px;
+    }
+    #buttons {
+        display: flex;
+        padding: 5px;
+    }
+`;

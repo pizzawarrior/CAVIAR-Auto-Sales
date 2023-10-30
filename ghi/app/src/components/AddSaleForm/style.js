@@ -16,20 +16,23 @@ export const Container = styled.div`
         align-items: center;
         justify-content: space-between;
     }
-
-    #search-row {
-        display: flex;
-        /* justify-content: flex-start; */
-        padding: 0, 12px;
-
-    }
-
-
 `;
+
+
+export const SalespersonFilter = styled.div`
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    padding-left: 10px;
+    grid-template-rows: repeat(auto-fill, auto);
+    grid-row-gap: 0.5em;
+    grid-column-gap: 1em;
+`
+
 
 export const TechDetails = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 8px;
     /* Gray */
     border: 1px solid #dddfdf;
