@@ -20,7 +20,7 @@ export const NavStyle = styled.nav`
 `;
 
 export const LeftContainer = styled.div`
-    flex: 30%;
+    flex: 40%;
     display: flex;
     padding-right: 50px;
     align-items: center;
@@ -30,7 +30,7 @@ export const LeftContainer = styled.div`
 export const Logo = styled.img`
     max-width: 7rem;
     height: auto;
-    margin-left: 10rem;
+    margin-left: 14rem;
 
     @media (max-width: 700) {
         margin-left: 0;
@@ -38,11 +38,11 @@ export const Logo = styled.img`
 `;
 
 export const RightContainer = styled.div`
-    flex: 70%;
+    flex: 60%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 10rem;
+    padding-right: 14rem;
 `;
 
 // LINKS
