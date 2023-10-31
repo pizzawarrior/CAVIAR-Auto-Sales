@@ -24,8 +24,6 @@ export const SalespersonFilter = styled.div`
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     padding-left: 10px;
-    grid-template-rows: repeat(auto-fill, auto);
-    grid-row-gap: 0.5em;
     grid-column-gap: 1em;
 `
 
