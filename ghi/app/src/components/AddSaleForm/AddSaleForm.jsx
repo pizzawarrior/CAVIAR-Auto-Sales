@@ -13,7 +13,7 @@ const AddSaleForm = ({
   setFire,
   handleFilter,
   setFilterValue,
-  sales,
+  sales
 }) => {
   const [showModal, setShowModal] = useState(false);
   const [vin, setVin] = useState("");
@@ -48,6 +48,7 @@ const AddSaleForm = ({
       })
       .catch((err) => console.log(err));
   };
+
 
   return (
     <Container>
@@ -173,6 +174,7 @@ const AddSaleForm = ({
           </thead>
           <tbody>
             {sales.map((sale) => {
+                const formatPrice = `$${sale.price.toFixed(2)}`;
               return (
                 <tr key={sale.id}>
                   <td>{sale.salesperson.employee_id}</td>
@@ -183,7 +185,7 @@ const AddSaleForm = ({
                     {sale.customer.first_name} {sale.customer.last_name}
                   </td>
                   <td>{sale.automobile.vin}</td>
-                  <td>{sale.price}</td>
+                  <td>{formatPrice}</td>
                   <td>
                     <button onClick={() => handleDelete(sale.id)}>
                       Delete
