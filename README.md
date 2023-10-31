@@ -19,9 +19,9 @@ Team:
 - docker-compose build
 - docker-compose up
 
-_Disregard a potential error that may pop-up related to 'missing an environment variable. This does not affect performance'_
+_Disregard a potential error that may pop-up related to 'missing an environment variable.' This does not affect performance_
 
-To view the project, open http://localhost:3000/
+To view the project, open http://localhost:3000/ in your browser
 
 # App Design
 
