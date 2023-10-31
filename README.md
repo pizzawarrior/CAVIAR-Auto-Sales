@@ -25,7 +25,9 @@ To view the project, open http://localhost:3000/ in your browser
 
 # App Design
 
-![Alt text](Caviar-Model-Diagram.png)
+![Alt text](./images/Caviar-Model-Diagram.png)
+
+
 
 ### Polling
 Pollers have been built for both microservices. They poll automobile data from the Inventory database every 60 seconds.
@@ -51,17 +53,16 @@ The microservice for all actions and information related to the sales department
 ## Endpoints
 
 ### Service
-![Alt text](Service-Endpoints.png)
+![Alt text](./images/Service-Endpoints.png)
 
 ### Sales
-![Alt text](Sales-Endpoints.png)
+![Alt text](./images/Sales-Endpoints.png)
 
 ### Automobile
-![Alt text](Autos-Endpoints.png)
+![Alt text](./images/Autos-Endpoints.png)
 
 ### Manufacturers
-![Alt text](Manufacturers-Endpoints.png)
+![Alt text](./images/Manufacturers-Endpoints.png)
 
 ### Models
-![Alt text](Models-Endpoints.png)
-
+![Alt text](./images/Models-Endpoints.png)
