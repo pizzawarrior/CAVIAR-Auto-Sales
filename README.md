@@ -53,15 +53,15 @@ The microservice for all actions and information related to the sales department
 ### Service
 ![Alt text](Service-Endpoints.png)
 
-### Sales Endpoints
+### Sales
 ![Alt text](Sales-Endpoints.png)
 
-### Automobile Endpoints
+### Automobile
 ![Alt text](Autos-Endpoints.png)
 
-### Manufacturers Endpoints
+### Manufacturers
 ![Alt text](Manufacturers-Endpoints.png)
 
-### Models Endpoints
+### Models
 ![Alt text](Models-Endpoints.png)
 
