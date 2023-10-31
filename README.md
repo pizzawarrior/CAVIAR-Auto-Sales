@@ -33,7 +33,7 @@ Pollers have been built for both microservices. They poll automobile data from t
 ### Service Microservice
 The microservice for all actions and informaton related to the service department of the dealership. The primary actions are to add technicians, add appointments, and update appointment statuses.
 
-### Sales microservice
+### Sales Microservice
 The microservice for all actions and information related to the sales department of the dealership. Primary actions include adding customers, salespeople, and sales records to the database, as well as the ability to delete them.
 
 ### Service Models
