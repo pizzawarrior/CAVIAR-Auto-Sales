@@ -12,15 +12,17 @@ Team:
 
 ## Running the Project
 
-1. Fork and clone the repo
-2. Run the following commands in your terminal:
+1. Fork and clone the repository
+2. From terminal cd into the project directory
+3. Make sure Docker desktop is running, and run the following commands in your terminal:
 - docker volume create beta-data
 - docker-compose build
 - docker-compose up
 
+_Disregard a potential error that may pop-up related to 'missing an environment variable. This does not affect performance'_
+
 To view the project, open http://localhost:3000/
 
-## Design
 # App Design
 
 ![Alt text](Caviar-Model-Diagram.png)
