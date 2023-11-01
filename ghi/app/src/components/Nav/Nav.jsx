@@ -42,6 +42,9 @@ export default function Nav() {
             </NavbarInnerContainer>
             {extendNavBar && (
                 <NavbarExtendedContainer>
+                    <NavbarLinkExtended to='/'>
+                        Current Inventory
+                    </NavbarLinkExtended>
                     <NavbarLinkExtended to='/sales'>
                         Sales Department
                     </NavbarLinkExtended>
