@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Wrapper, InventoryContainer } from './style';
 import AutoList from '../../components/AutoList/AutoList';
-import axios from 'axios';
 import Manufacturers from '../../components/Manufacturers/Manufacturers';
 import Vehicles from '../../components/Vehicles/Vehicles';
+import { handleGet } from '../../helpers/getFunction';
 
 const Inventory = () => {
     const [autos, setAutos] = useState([]);
@@ -12,23 +12,23 @@ const Inventory = () => {
     const [fire, setFire] = useState(false);
 
     useEffect(() => {
-        let endpoints = [
+        handleGet(
             'http://localhost:8100/api/automobiles/',
+            setAutos,
+            'autos',
+            setFire
+        );
+        handleGet(
             'http://localhost:8100/api/manufacturers/',
+            setManufacturer,
+            'manufacturers',
+            setFire
+        );
+        handleGet(
             'http://localhost:8100/api/models/',
-        ];
-
-        Promise.all(endpoints.map((endpoint) => axios.get(endpoint))).then(
-            ([
-                { data: automobiles },
-                { data: manufacturer },
-                { data: models },
-            ]) => {
-                setAutos(automobiles.autos);
-                setManufacturer(manufacturer.manufacturers);
-                setVehicles(models.models);
-                setFire(false);
-            }
+            setVehicles,
+            'models',
+            setFire
         );
     }, [fire]);
 

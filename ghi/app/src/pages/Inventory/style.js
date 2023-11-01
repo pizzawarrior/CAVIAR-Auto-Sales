@@ -10,7 +10,7 @@ export const InventoryContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    grid-auto-rows: 42vh;
+    grid-auto-rows: 40vh;
     padding: 40px 32px;
 
     .section {
