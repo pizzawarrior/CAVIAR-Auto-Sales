@@ -39,6 +39,9 @@ const AddSale = ({
         price: price,
       })
       .then(({ data }) => {
+        axios.put(`http://localhost:8100/api/automobiles/${vin}/sold/`)
+        .catch(err => console.log(err))
+
         setVin("");
         setCustomer("");
         setSalesperson("");

@@ -29,7 +29,7 @@ const Sales = () => {
     handleGet(
       "http://localhost:8100/api/automobiles/",
       setAutomobiles,
-      "automobiles",
+      "autos",
       setFire
     );
     handleGet("http://localhost:8090/api/sales/", setSales, "sales", setFire);
