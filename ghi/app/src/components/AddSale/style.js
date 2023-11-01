@@ -18,7 +18,6 @@ export const Container = styled.div`
     }
 `;
 
-
 export const SalespersonFilter = styled.div`
     width: 100%;
     display: grid;
@@ -36,7 +35,6 @@ export const SalespersonFilter = styled.div`
         cursor: pointer;
     }
 `
-
 
 export const TechDetails = styled.div`
     display: flex;
