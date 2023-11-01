@@ -8,12 +8,11 @@ export const Row = styled.div`
     button {
         background-color: #5694f0;
         border: 1px solid #140d4f;
-        margin: 0 1px;
+        margin: 0 6px;
         padding: 6px;
         color: #fff;
-        border-radius: 4px;
+        border-radius: 15px;
         cursor: pointer;
-
     }
 `;
 

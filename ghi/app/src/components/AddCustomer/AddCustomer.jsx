@@ -6,7 +6,7 @@ import { ButtonStyle } from "../Button/style";
 import { ModalContainer } from "../../pages/Inventory/style";
 import { Container } from "../Manufacturers/style";
 
-const AddCustomerForm = ({ customers, setFire }) => {
+const AddCustomer = ({ customers, setFire }) => {
   const [showModal, setShowModal] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -126,4 +126,4 @@ const AddCustomerForm = ({ customers, setFire }) => {
   );
 };
 
-export default AddCustomerForm;
+export default AddCustomer;

@@ -6,7 +6,7 @@ import { ModalContainer } from "../../pages/Sales/style";
 import { TechDetails, Container } from "./style";
 import { SalespersonFilter } from "./style";
 
-const AddSaleForm = ({
+const AddSale = ({
   autos,
   customers,
   salespeople,
@@ -157,8 +157,8 @@ const AddSaleForm = ({
           })}
         </select>
 
-        <button onClick={() => handleFilter()}>Submit</button>
-        <button onClick={() => setFire(true)}>Clear</button>
+        <button className="filterButton" onClick={() => handleFilter()}>Submit</button>
+        <button className="filterButton" onClick={() => setFire(true)}>Clear</button>
       </SalespersonFilter>
 
       <TechDetails>
@@ -201,4 +201,4 @@ const AddSaleForm = ({
   );
 };
 
-export default AddSaleForm;
+export default AddSale;

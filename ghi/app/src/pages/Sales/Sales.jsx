@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Wrapper, SalesContainer } from './style';
-import AddSaleForm from '../../components/AddSaleForm/AddSaleForm';
-import AddCustomerForm from '../../components/AddCustomer/AddCustomerForm';
-import AddSalespersonForm from '../../components/AddSalespersonForm/AddSalespersonForm';
+import AddSale from '../../components/AddSale/AddSale';
+import AddCustomer from '../../components/AddCustomer/AddCustomer';
+import AddSalesperson from '../../components/AddSalesperson/AddSalesperson';
 import axios from 'axios';
 
 const Sales = () => {
@@ -46,7 +46,7 @@ const Sales = () => {
                     className='section'
                     id='two'
                 >
-                    <AddSalespersonForm
+                    <AddSalesperson
                         salespeople={salespeople}
                         setFire={setFire}
                     />
@@ -56,7 +56,7 @@ const Sales = () => {
                     id='one'
                 >
                     {' '}
-                    <AddCustomerForm
+                    <AddCustomer
                         customers={customers}
                         setFire={setFire}
                     />
@@ -65,7 +65,7 @@ const Sales = () => {
                     className='section'
                     id='three'
                 >
-                    <AddSaleForm
+                    <AddSale
                         setFire={setFire}
                         handleFilter={handleFilter}
                         sales={sales}

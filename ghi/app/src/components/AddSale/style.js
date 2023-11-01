@@ -18,15 +18,23 @@ export const Container = styled.div`
     }
 `;
 
-
 export const SalespersonFilter = styled.div`
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     padding-left: 10px;
     grid-column-gap: 1em;
-`
 
+    .filterButton {
+        background-color: #5694f0;
+        border: 1px solid #140d4f;
+        margin: 0 1px;
+        padding: 6px;
+        color: #fff;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+`
 
 export const TechDetails = styled.div`
     display: flex;
