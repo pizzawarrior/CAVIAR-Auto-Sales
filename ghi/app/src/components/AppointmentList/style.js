@@ -11,9 +11,8 @@ export const Row = styled.div`
         margin: 0 1px;
         padding: 6px;
         color: #fff;
-        border-radius: 4px;
+        border-radius: 15px;
         cursor: pointer;
-
     }
 `;
 

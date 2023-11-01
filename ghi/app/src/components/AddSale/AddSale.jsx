@@ -157,8 +157,8 @@ const AddSale = ({
           })}
         </select>
 
-        <button onClick={() => handleFilter()}>Submit</button>
-        <button onClick={() => setFire(true)}>Clear</button>
+        <button className="filterButton" onClick={() => handleFilter()}>Submit</button>
+        <button className="filterButton" onClick={() => setFire(true)}>Clear</button>
       </SalespersonFilter>
 
       <TechDetails>
