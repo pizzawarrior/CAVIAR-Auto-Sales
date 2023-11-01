@@ -13,7 +13,6 @@ export const Row = styled.div`
         color: #fff;
         border-radius: 4px;
         cursor: pointer;
-
     }
 `;
 
