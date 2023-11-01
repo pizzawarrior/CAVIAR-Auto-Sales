@@ -37,6 +37,20 @@ def api_automobiles(request):
             return response
 
 
+def set_status_sold(request, vin):
+    try:
+        Automobile.objects.filter(vin=vin).update(sold=True)
+        return JsonResponse(
+            {"message": "sold status updated"},
+            status=200
+        )
+    except Automobile.DoesNotExist:
+        return JsonResponse(
+            {"message": "Invalid automobile"},
+            status=400
+        )
+
+
 @require_http_methods(["DELETE", "GET", "PUT"])
 def api_automobile(request, vin):
     if request.method == "GET":

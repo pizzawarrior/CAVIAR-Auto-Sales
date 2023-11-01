@@ -7,6 +7,7 @@ from .views import (
     api_manufacturer,
     api_vehicle_models,
     api_vehicle_model,
+    set_status_sold
 )
 
 urlpatterns = [
@@ -40,4 +41,9 @@ urlpatterns = [
         api_vehicle_model,
         name="api_vehicle_model",
     ),
+    path(
+        "automobiles/<str:vin>/sold/",
+        set_status_sold,
+        name="set_status_sold"
+    )
 ]
