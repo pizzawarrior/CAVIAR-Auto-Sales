@@ -6,7 +6,7 @@ import { ModalContainer } from "../../pages/Sales/style";
 import { TechDetails, Container } from "./style";
 import { SalespersonFilter } from "./style";
 
-const AddSaleForm = ({
+const AddSale = ({
   autos,
   customers,
   salespeople,
@@ -201,4 +201,4 @@ const AddSaleForm = ({
   );
 };
 
-export default AddSaleForm;
+export default AddSale;
