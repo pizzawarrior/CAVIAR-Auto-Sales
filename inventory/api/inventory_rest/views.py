@@ -37,6 +37,7 @@ def api_automobiles(request):
             return response
 
 
+# Update Auto sold status:
 def set_status_sold(request, vin):
     try:
         Automobile.objects.filter(vin=vin).update(sold=True)
