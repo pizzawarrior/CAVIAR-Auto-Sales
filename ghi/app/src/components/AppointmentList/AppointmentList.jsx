@@ -1,8 +1,14 @@
+/* eslint-disable eqeqeq */
 import axios from 'axios';
 import { AppointmentContainer, Row, Span } from './style';
 import { Container } from '../Manufacturers/style';
 
-const AppointmentList = ({ appointments, setFire }) => {
+const AppointmentList = ({
+    appointments,
+    setFire,
+    technicians,
+    setAppointments,
+}) => {
     let format = (date) =>
         new Date(date).toLocaleDateString('en-us', {
             month: 'short',
@@ -25,9 +31,39 @@ const AppointmentList = ({ appointments, setFire }) => {
             .catch((err) => console.log(err));
     };
 
+    const handleFilter = (value) => {
+        if (!value) {
+            setFire(true);
+        } else {
+            let filtered = appointments.filter(
+                (appt) => appt.technician.employee_id == value
+            );
+            setAppointments(filtered);
+        }
+    };
+
     return (
         <Container>
-            <h1>Service Appointments</h1>
+            <div id='buttonBox'>
+                <h1>Service Appointments</h1>
+                <select
+                    name='technicians'
+                    id='technicians'
+                    onChange={(e) => {
+                        handleFilter(e.target.value);
+                    }}
+                >
+                    <option value=''>Choose a technician</option>
+                    {technicians.map((item, index) => (
+                        <option
+                            key={index}
+                            value={item.employee_id}
+                        >
+                            {item.first_name}
+                        </option>
+                    ))}
+                </select>
+            </div>
             {appointments.map((item, index) => (
                 <AppointmentContainer key={index}>
                     <Row>

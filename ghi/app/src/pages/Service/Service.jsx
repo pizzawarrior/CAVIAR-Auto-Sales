@@ -17,7 +17,7 @@ const Service = () => {
             setTechnicians,
             'technicians',
             setFire
-        );
+        )
         handleGet(
             'http://localhost:8080/api/appointments/',
             setAppointments,
@@ -36,6 +36,8 @@ const Service = () => {
                     <AppointmentList
                         setFire={setFire}
                         appointments={appointments}
+                        technicians={technicians}
+                        setAppointments={setAppointments}
                     />
                 </div>
                 <div
