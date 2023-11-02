@@ -10,7 +10,6 @@ export const VehicleRow = styled.div`
     font-weight: 500;
 
     img {
-        width: 50px;
-        height: auto;
+        height: 50px;
     }
 `;
