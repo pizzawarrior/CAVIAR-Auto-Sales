@@ -23,10 +23,17 @@ _Disregard a potential error that may pop-up related to 'missing an environment 
 
 To view the project, open http://localhost:3000/ in your browser
 
-# App Design
+## Demo Pages
+
+![Inventory-Page](https://github.com/pizzawarrior/CAVIAR-Auto-Sales/assets/94874182/64d97b17-e9ae-4829-bfe0-d0390dcb018c)
+<br>
+<br>
+
+![Sales-Modal](https://github.com/pizzawarrior/CAVIAR-Auto-Sales/assets/94874182/a7267f5b-8720-483a-9cda-cbe4d3ac195c)
+
+## App Design
 
 ![Alt text](./images/Caviar-Model-Diagram.png)
-
 
 
 ### Polling
